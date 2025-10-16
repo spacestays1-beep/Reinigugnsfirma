@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpaceClean – Reinigungsfirma</title>
+  <meta name="description" content="SpaceClean – professionelle Gebäudereinigung, Hausmeisterservice und mehr.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="SpaceClean Logo">
+      <span class="name">SpaceClean</span>
+    </div>
+    <div class="center-contact">
+      <span>📞 <a href="tel:+491234567890">+49 123 456 7890</a></span>
+      <span class="dot"></span>
+      <span>✉️ <a href="mailto:info@spaceclean.de">info@spaceclean.de</a></span>
+      <span class="dot"></span>
+      <span>📍 München</span>
+    </div>
+    <div class="actions">
+      <a class="btn" href="#leistungen">Leistungen</a>
+      <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero container" id="home">
+    <div>
+      <h1>Sauberkeit, die man sieht.<br>Service, den man spürt.</h1>
+      <p>SpaceClean ist Ihr zuverlässiger Partner für professionelle Reinigung – flexibel, transparent und gründlich. Für Büros, Praxen, Treppenhäuser &amp; mehr.</p>
+      <div class="badges">
+        <span class="badge">100% Zufriedenheitsgarantie</span>
+        <span class="badge">Geschultes Personal</span>
+        <span class="badge">Umweltfreundliche Mittel</span>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/hero.svg" alt="Reinigung – Hero Bild">
+    </div>
+  </section>
+
+  <section class="section" id="vorteile">
+    <div class="container">
+      <h2>Warum SpaceClean?</h2>
+      <p class="lead">Mit klaren Prozessen, geprüfter Qualität und fairen Preisen liefern wir konstante Ergebnisse.</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon">🧼</div>
+          <h3>Gründlich &amp; zuverlässig</h3>
+          <p>Checklisten, Vier-Augen-Prinzip und feste Ansprechpartner.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🌱</div>
+          <h3>Nachhaltig</h3>
+          <p>Schonende, zertifizierte Reinigungsmittel und ressourcenschonende Prozesse.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⏱️</div>
+          <h3>Flexible Zeiten</h3>
+          <p>Wir arbeiten, wenn es für Sie passt – auch frühmorgens oder abends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="leistungen">
+    <div class="container">
+      <h2>Unsere Leistungen</h2>
+      <p class="lead">Wählen Sie die Services, die zu Ihrem Objekt passen.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Unterhaltsreinigung</h3>
+          <p>Regelmäßige Reinigung für Büros, Praxen, Ladengeschäfte und öffentliche Einrichtungen.</p>
+          <ul>
+            <li>Oberflächen &amp; Sanitär</li>
+            <li>Böden saugen &amp; wischen</li>
+            <li>Müllentsorgung</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Glas- &amp; Fensterreinigung</h3>
+          <p>Schlierenfrei und sicher – innen wie außen, auch schwer zugängliche Bereiche.</p>
+        </div>
+        <div class="card">
+          <h3>Treppenhausreinigung</h3>
+          <p>Saubere Eingänge und Treppenhäuser für Wohnanlagen und Gewerbeimmobilien.</p>
+        </div>
+        <div class="card">
+          <h3>Grund- &amp; Bauendreinigung</h3>
+          <p>Tiefe Grundreinigung sowie Beseitigung von Baustaub und -schmutz.</p>
+        </div>
+        <div class="card">
+          <h3>Sonderreinigung</h3>
+          <p>Teppich, Polster, Graffitientfernung, Desinfektion – auf Anfrage.</p>
+        </div>
+        <div class="card">
+          <h3>Hausmeisterservice</h3>
+          <p>Kleinreparaturen, Außenanlagenpflege und Winterdienst über Partner möglich.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galerie">
+    <div class="container">
+      <h2>Impressionen</h2>
+      <p class="lead">Fügen Sie hier Ihre eigenen Vorher/Nachher-Bilder hinzu.</p>
+      <div class="gallery">
+        <img src="assets/gallery1.svg" alt="Galerie Bild 1">
+        <img src="assets/gallery2.svg" alt="Galerie Bild 2">
+        <img src="assets/gallery3.svg" alt="Galerie Bild 3">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="kontakt">
+    <div class="container contact">
+      <div>
+        <h2>Angebot anfragen</h2>
+        <p class="lead">Erzählen Sie uns kurz, was gereinigt werden soll – wir melden uns schnell mit einem Angebot.</p>
+        <form id="contact-form">
+          <label>Ihr Name<br><input name="name" required></label><br><br>
+          <label>E-Mail<br><input type="email" name="email" required></label><br><br>
+          <label>Telefon<br><input type="tel" name="phone"></label><br><br>
+          <label>Nachricht<br><textarea name="message" placeholder="Objektart, Fläche, Wunschtermine ..."></textarea></label><br><br>
+          <button class="btn btn-primary" type="submit">Absenden</button>
+        </form>
+        <p class="small">Hinweis: Dieses Formular sendet aktuell keine E-Mail (Demo). Nutzen Sie ein Formular-Tool oder binden Sie ein Backend an.</p>
+      </div>
+      <div class="card">
+        <h3>Kontakt</h3>
+        <p><strong>SpaceClean</strong><br>
+           Musterstraße 1<br>
+           80331 München</p>
+        <p>Telefon: <a href="tel:+491234567890">+49 123 456 7890</a><br>
+           E-Mail: <a href="mailto:info@spaceclean.de">info@spaceclean.de</a></p>
+        <p class="small">Öffnungszeiten: Mo–Fr 8–18 Uhr</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container cols">
+    <div>
+      <div class="brand">
+        <img src="assets/logo.svg" alt="SpaceClean Logo">
+        <span class="name">SpaceClean</span>
+      </div>
+      <p class="small">© <span id="y"></span> SpaceClean. Alle Rechte vorbehalten.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <p><a href="#home">Start</a><br><a href="#leistungen">Leistungen</a><br><a href="#kontakt">Kontakt</a></p>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <p><a href="#">Impressum</a><br><a href="#">Datenschutz</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
