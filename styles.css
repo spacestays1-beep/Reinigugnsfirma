@@ -102,3 +102,52 @@ textarea{min-height:120px; resize:vertical}
 .slide.active {
   opacity: 1;
 }
+/* --- Responsive Design (Mobile Anpassung) --- */
+@media (max-width: 768px) {
+  body {
+    padding: 0 10px;
+  }
+
+  header .container, .hero.container, .card, .center-contact {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-slideshow {
+    height: 250px; /* Slideshow kleiner für Handy */
+  }
+
+  .slide {
+    object-fit: cover;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .center-contact span, .center-contact a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+}
