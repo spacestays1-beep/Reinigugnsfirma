@@ -255,3 +255,9 @@ textarea{min-height:120px; resize:vertical}
   display: block;
   border-radius: inherit; /* gleiche Rundung übernehmen */
 }
+@media (max-width: 768px) {
+  .hero-slideshow {
+    border-radius: 8px;
+    height: 250px;
+  }
+}
