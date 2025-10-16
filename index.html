@@ -124,14 +124,36 @@
       <div>
         <h2>Angebot anfragen</h2>
         <p class="lead">Erzählen Sie uns kurz, was gereinigt werden soll – wir melden uns schnell mit einem Angebot.</p>
-        <form id="contact-form">
-          <label>Alexander Kupriychuk & Maximilian Frank Weyer<br><input name="name" required></label><br><br>
-          <label>email<br><input type="email" name="email" required></label><br><br>
-          <label>+49 173 3570004<br><input type="tel" name="phone"></label><br><br>
-          <label>Nachricht<br><textarea name="message" placeholder="Objektart, Fläche, Wunschtermine ..."></textarea></label><br><br>
-          <button class="btn btn-primary" type="submit">Absenden</button>
-        </form>
-        <p class="small">Hinweis: Dieses Formular sendet aktuell keine E-Mail (Demo). Nutzen Sie ein Formular-Tool oder binden Sie ein Backend an.</p>
+       <form id="contact-form" action="https://formspree.io/f/myznlqbb" method="POST">
+  <label>Ihr Name<br>
+    <input type="text" name="name" required>
+  </label><br><br>
+
+  <label>E-Mail<br>
+    <input type="email" name="email" required>
+  </label><br><br>
+
+  <label>Telefon<br>
+    <input type="tel" name="phone">
+  </label><br><br>
+
+  <label>Nachricht<br>
+    <textarea name="message" placeholder="Objektart, Fläche, Wunschtermine ..." required></textarea>
+  </label><br><br>
+
+  <!-- Optional: Betreff und Redirect -->
+  <input type="hidden" name="_subject" value="Neue Anfrage über SpaceClean-Website">
+  <input type="hidden" name="_language" value="de">
+  <!-- Wenn du später eine Danke-Seite hast, kannst du die hier eintragen -->
+  <!-- <input type="hidden" name="_redirect" value="https://deine-domain.de/danke.html"> -->
+
+  <button class="btn btn-primary" type="submit">Absenden</button>
+</form>
+
+<p class="small">
+  Danke! Wir melden uns in Kürze bei Ihnen.<br>
+  Hinweis: Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten zur Bearbeitung Ihrer Anfrage zu.
+</p>
       </div>
       <div class="card">
         <h3>Kontakt</h3>
