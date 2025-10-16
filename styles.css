@@ -261,3 +261,7 @@ textarea{min-height:120px; resize:vertical}
     height: 250px;
   }
 }
+#bewertungen .card{ background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.08); border-radius:12px; padding:20px; transition:transform .2s }
+#bewertungen .card:hover{ transform:translateY(-4px) }
+#bewertungen .small{ color:#22c55e; font-weight:600; margin-top:10px }
+#bewertungen h2{ margin-bottom:10px }
