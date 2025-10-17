@@ -23,4 +23,17 @@ if (slides.length > 0) {
     slides[currentSlide].classList.add('active');
   }, 2500); // alle 2,5 Sekunden wechseln
 }
+// === Slideshow-Autoplay ===
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  if (!slides.length) return;
 
+  let i = slides.findIndex(s => s.classList.contains('active'));
+  if (i < 0) { i = 0; slides[0].classList.add('active'); }
+
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 2500);
+});
