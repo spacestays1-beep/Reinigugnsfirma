@@ -338,3 +338,16 @@ body {
 @media (max-width:768px){
   .hero-slideshow{ height: 250px; }
 }
+.legal {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+.legal h1, .legal h2 {
+  color: #0ea5e9;
+  margin-bottom: 10px;
+}
+.legal a { color: #22c55e; text-decoration: none; }
+.legal a:hover { text-decoration: underline; }
