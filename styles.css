@@ -316,3 +316,25 @@ body {
     opacity: 0.12;          /* mobile gern anpassen */
   }
 }
+/* Slideshow: Layer + Fade-Animation */
+.hero-slideshow { position: relative; height: 400px; border-radius:12px; overflow:hidden; }
+.slideshow-container { position: relative; width:100%; height:100%; }
+
+/* jedes Slide liegt übereinander und ist zunächst unsichtbar */
+.slide{
+  position: absolute;
+  inset: 0;              /* top/right/bottom/left: 0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: block;
+}
+
+/* sichtbares Slide */
+.slide.active{ opacity: 1; }
+
+@media (max-width:768px){
+  .hero-slideshow{ height: 250px; }
+}
