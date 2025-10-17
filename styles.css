@@ -309,3 +309,7 @@ body::before {
   backdrop-filter: blur(3px);
   z-index: -1;
 }
+<body>
+  <!-- Fester Hintergrund: SpaceClean-Logo -->
+  <div class="page-bg" aria-hidden="true"></div>
+  <!-- …dein restlicher Code… -->
