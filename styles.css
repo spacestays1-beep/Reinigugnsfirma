@@ -289,27 +289,30 @@ a:focus, button:focus{ outline:3px solid #22c55e; outline-offset:2px }
 /* -------------------------------------- */
 
 body {
-  position: relative;
-  min-height: 100vh;
-  background-color: #ffffff;
-  background-image: url("assets/bg-logo.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: 60%;
-  z-index: 0;
+ 
 }
-
-/* Weiche weiße Schicht drüber für dezenten Effekt */
-body::before {
-  content: "";
+/* Globale, fixe Hintergrund-Ebene – funktioniert auf iOS & Android */
+.page-bg{
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(3px);
-  z-index: -1;
+  z-index: -1;              /* hinter allem */
+  pointer-events: none;
+  background: center center / clamp(320px, 60vw, 900px) no-repeat
+              url("assets/bg-logo.png");
+  filter: blur(2px);        /* leicht verschwommen */
+  opacity: 0.10;            /* dezent */
+  will-change: transform;
+  transform: translateZ(0);
 }
-<body>
-  <!-- Fester Hintergrund: SpaceClean-Logo -->
-  <div class="page-bg" aria-hidden="true"></div>
-  <!-- …dein restlicher Code… -->
+.page-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background: rgba(255,255,255,0.6); /* leichte Nebelschicht für Lesbarkeit */
+}
+
+@media (max-width: 768px){
+  .page-bg{
+    background-size: clamp(280px, 70vw, 800px);
+    opacity: 0.12;          /* mobile gern anpassen */
+  }
+}
