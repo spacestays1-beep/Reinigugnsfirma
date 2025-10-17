@@ -284,3 +284,28 @@ a:focus, button:focus{ outline:3px solid #22c55e; outline-offset:2px }
 @media (max-width: 768px){
   .actions { display: none; }
 }
+/* -------------------------------------- */
+/*  Hintergrund mit SpaceClean Logo (global) */
+/* -------------------------------------- */
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #ffffff;
+  background-image: url("assets/bg-logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: 60%;
+  z-index: 0;
+}
+
+/* Weiche weiße Schicht drüber für dezenten Effekt */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
