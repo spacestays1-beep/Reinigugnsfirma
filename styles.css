@@ -280,3 +280,7 @@ a:focus, button:focus{ outline:3px solid #22c55e; outline-offset:2px }
 /* Card-Hover dezenter Premium-Look */
 .card{transition:transform .2s, box-shadow .2s}
 .card:hover{transform:translateY(-4px); box-shadow:0 12px 24px rgba(2,6,23,.08)}
+/* Obere Header-Buttons auf Handy ausblenden */
+@media (max-width: 768px){
+  .actions { display: none; }
+}
