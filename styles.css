@@ -299,7 +299,7 @@ body {
   pointer-events: none;
   background: center center / clamp(320px, 60vw, 900px) no-repeat
               url("assets/bg-logo.png");
-  filter: blur(2px);        /* leicht verschwommen */
+  filter: blur(0.7px);        /* leicht verschwommen */
   opacity: 0.10;            /* dezent */
   will-change: transform;
   transform: translateZ(0);
