@@ -202,3 +202,30 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
   .hero h1{ font-size:24px; }
   .badge{ font-size:11px; padding:5px 8px; }
 }
+/* ===== Mobile CTA unten – nur auf Smartphones ===== */
+/* Standard: auf Desktop/Laptop ausgeblendet */
+.mobile-cta{ display:none; }
+
+/* Nur <= 768px anzeigen */
+@media (max-width: 768px){
+  /* Platz für die Leiste schaffen, damit nichts verdeckt wird */
+  body{ padding-bottom: 84px; } /* Höhe der Leiste + Luft */
+
+  .mobile-cta{
+    position: fixed; left: 0; right: 0;
+    bottom: max(10px, env(safe-area-inset-bottom));  /* iPhone Notch-Schutz */
+    display: flex; gap: 10px; justify-content: center;
+    padding: 10px 14px;
+    z-index: 60;
+    pointer-events: none; /* Container klicksperren, nur Buttons klickbar */
+  }
+  .mobile-cta a{
+    pointer-events: auto;           /* Buttons klickbar */
+    flex: 1; max-width: 520px;      /* nicht endlos breit */
+    text-align: center; font-weight: 700;
+    border-radius: 12px; padding: 12px 14px;
+    background: linear-gradient(135deg,#0ea5e9,#22c55e);
+    color: #fff; text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  }
+}
