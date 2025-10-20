@@ -193,7 +193,7 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
   .contact{ grid-template-columns:1fr; }
   .btn.btn-primary{ width:100%; }
 
-  .mobile-cta{ display:flex; }         /* unten sichtbar */
+  
 }
 
 /* Sehr kleine Geräte */
@@ -229,3 +229,13 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
     box-shadow: 0 8px 20px rgba(0,0,0,.15);
   }
 }
+/* Floating-Button nur auf Desktop */
+.fab-desktop{
+  position: fixed; right: 22px; bottom: 22px; z-index: 50;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg,#0ea5e9,#22c55e);
+  color:#fff; text-decoration:none; font-size:22px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+@media (max-width:768px){ .fab-desktop{ display:none; } }
