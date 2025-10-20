@@ -239,3 +239,22 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
   box-shadow: 0 10px 24px rgba(0,0,0,.18);
 }
 @media (max-width:768px){ .fab-desktop{ display:none; } }
+/* --- Header-Buttons optimieren --- */
+.header .actions .btn {
+  padding: 8px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  line-height: 1.2;
+}
+
+.header .actions .btn-primary {
+  background: linear-gradient(135deg, #0ea5e9, #22c55e);
+  color: #fff;
+  border: none;
+}
+
+.header .actions .btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
