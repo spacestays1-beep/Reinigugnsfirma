@@ -351,3 +351,40 @@ body {
 }
 .legal a { color: #22c55e; text-decoration: none; }
 .legal a:hover { text-decoration: underline; }
+/* Akkordeon */
+.accordion { display: grid; gap: 12px; }
+.acc-item { background: #f7f7f8; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 2px rgba(2,6,23,.05); }
+
+.acc-trigger{
+  width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  padding: 18px 16px;
+  background: transparent;
+  border: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.acc-trigger:hover { background: #f1f5f9; }
+.acc-trigger:focus { outline: 3px solid #22c55e; outline-offset: 2px; }
+
+.acc-trigger .chev{
+  width: 22px; height: 22px; flex: 0 0 auto;
+  stroke: #64748b; stroke-width: 2; fill: none;
+  transition: transform .2s ease;
+}
+.acc-trigger[aria-expanded="true"] .chev{ transform: rotate(180deg); }
+
+.acc-panel{
+  padding: 0 16px 16px 16px;
+  color: #334155;
+  background: #e9f2f5;           /* leichtes Blau wie im Beispiel */
+  margin: 0 16px 16px 16px;       /* Innenabstand zur grauen Karte */
+  border-radius: 10px;
+}
+
+#leistungen-accordion h2{ margin-bottom: 12px; }
+
+/* Buttons zentrieren */
+.center{ display: flex; justify-content: center; margin-top: 8px; }
