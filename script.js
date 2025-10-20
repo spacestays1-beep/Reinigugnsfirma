@@ -37,3 +37,28 @@ document.addEventListener('DOMContentLoaded', () => {
     slides[i].classList.add('active');
   }, 2500);
 });
+// Akkordeon: öffnen/schließen, nur ein Panel gleichzeitig
+(() => {
+  const triggers = Array.from(document.querySelectorAll('.acc-trigger'));
+  if (!triggers.length) return;
+
+  triggers.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const panel = document.getElementById(btn.getAttribute('aria-controls'));
+
+      // alle schließen
+      triggers.forEach(b => {
+        const p = document.getElementById(b.getAttribute('aria-controls'));
+        b.setAttribute('aria-expanded', 'false');
+        if (p) p.hidden = true;
+      });
+
+      // dieses ggf. öffnen
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        if (panel) panel.hidden = false;
+      }
+    });
+  });
+})();
