@@ -196,28 +196,23 @@
       <div>
         <h2>Angebot anfragen</h2>
         <p class="lead">Erzählen Sie uns kurz, was gereinigt werden soll – wir melden uns schnell mit einem Angebot.</p>
-       <form id="contact-form" action="https://formspree.io/f/myznlqbb" method="POST">
-  <label>Ihr Name<br>
-    <input type="text" name="name" required>
-  </label><br><br>
+      <form id="contact-form" action="https://formspree.io/f/myznlqbb" method="POST">
+  <label>Ihr Name</label>
+  <input type="text" name="name" required><br><br>
 
-  <label>E-Mail<br>
-    <input type="email" name="email" required>
-  </label><br><br>
+  <label>E-Mail</label>
+  <input type="email" name="email" required><br><br>
 
-  <label>Telefon<br>
-    <input type="tel" name="phone">
-  </label><br><br>
+  <label>Telefon</label>
+  <input type="tel" name="phone"><br><br>
 
-  <label>Nachricht<br>
-    <textarea name="message" placeholder="Objektart, Fläche, Wunschtermine ..." required></textarea>
-  </label><br><br>
+  <label>Nachricht</label>
+  <textarea name="message" placeholder="Objektart, Fläche, Wunschtermine ..." required></textarea><br><br>
 
-  <!-- Optional: Betreff und Redirect -->
+  <!-- Optional: versteckte Felder -->
   <input type="hidden" name="_subject" value="Neue Anfrage über SpaceClean-Website">
   <input type="hidden" name="_language" value="de">
-  <!-- Wenn du später eine Danke-Seite hast, kannst du die hier eintragen -->
-  <!-- <input type="hidden" name="_redirect" value="https://deine-domain.de/danke.html"> -->
+  <input type="hidden" name="_gotcha" style="display:none"> <!-- Spam-Schutz -->
 
   <button class="btn btn-primary" type="submit">Absenden</button>
 </form>
