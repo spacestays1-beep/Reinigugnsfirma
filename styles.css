@@ -258,3 +258,8 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
   opacity: 0.9;
   transform: translateY(-1px);
 }
+/* --- Abstand unter Akkordeon-Button --- */
+#leistungen .center {
+  margin-top: 24px;
+  margin-bottom: 48px; /* mehr Luft nach unten */
+}
