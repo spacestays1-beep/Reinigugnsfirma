@@ -28,4 +28,47 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Hinweis: Für das neue Akkordeon (details/summary) ist KEIN JS nötig.
+
+  // === NRW-Karte mit Leaflet ===
+  const mapEl = document.getElementById('nrw-map');
+  if (mapEl && typeof L !== 'undefined') {
+    // Karte initialisieren
+    const map = L.map(mapEl, {
+      scrollWheelZoom: false,
+      dragging: true,
+      zoomControl: true
+    });
+
+    // OSM Tiles laden
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap-Mitwirkende'
+    }).addTo(map);
+
+    // Koordinaten (Lat, Lng)
+    const spots = [
+      { name: 'Düsseldorf (Hauptstandort)', lat: 51.2277, lng: 6.7735, primary: true },
+      { name: 'Essen',          lat: 51.4556, lng: 7.0116 },
+      { name: 'Duisburg',       lat: 51.4344, lng: 6.7623 },
+      { name: 'Gelsenkirchen',  lat: 51.5177, lng: 7.0857 },
+      { name: 'Wuppertal',      lat: 51.2562, lng: 7.1508 }
+    ];
+
+    // Grüner Marker-Stil (passend zum Branding)
+    const baseStyle = { radius: 8, color: '#16a34a', weight: 2, fillColor: '#4ade80', fillOpacity: 0.9 };
+    const mainStyle = { radius: 10, color: '#166534', weight: 3, fillColor: '#22c55e', fillOpacity: 1 };
+
+    const bounds = [];
+    spots.forEach(s => {
+      const style = s.primary ? mainStyle : baseStyle;
+      const marker = L.circleMarker([s.lat, s.lng], style).addTo(map);
+      marker.bindPopup(`<strong>${s.name}</strong><br>SpaceClean – zuverlässig in NRW`);
+      bounds.push([s.lat, s.lng]);
+    });
+
+    // Auf alle Marker zoomen
+    map.fitBounds(bounds, { padding: [30, 30] });
+
+    // Nicht zu weit reinzoomen bei schmalen Screens
+    if (map.getZoom() > 12) map.setZoom(12);
+  }
 });
