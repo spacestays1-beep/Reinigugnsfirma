@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SpaceClean – Reinigungsfirma</title>
-  <meta name="description" content="SpaceClean – Ferienwohnungen, professionelle Gebäudereinigung, Grundreinigung und mehr.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="styles.css">
-  <!-- ggf. deine SEO JSON-LD Scripts hier -->
+  <meta name="description" content="SpaceClean – professionelle Gebäudereinigung für Wohnungen, Häuser, Büros, Praxen und Fenster in Essen, Duisburg & Bochum." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Platz für JSON-LD / SEO -->
 </head>
 
 <body>
@@ -18,311 +18,233 @@
   <header class="header">
     <div class="container nav">
       <div class="brand">
-        <img src="assets/SpaceClean.jpg" alt="SpaceClean Logo" style="height:66px;">
+        <img src="assets/SpaceClean.jpg" alt="SpaceClean Logo" style="height:66px;" />
         <span class="name">SpaceClean</span>
       </div>
-      <!-- ... dein restlicher Header ... -->
+
+      <div class="center-contact">
+        <span>📞 <a href="tel:+491733570004">+49 173 3570004</a></span>
+        <span class="dot"></span>
+        <span>✉️ <a href="mailto:spacestays1@gmail.com">spacestays1@gmail.com</a></span>
+        <span class="dot"></span>
+        <span>📍 Nordrhein-Westfalen</span>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="#leistungen">Leistungen</a>
+        <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
+      </div>
     </div>
   </header>
 
-  <!-- ... dein restlicher Seiteninhalt (Hero, Slideshow, Leistungen, Kontakt, …) ... -->
+  <main>
+    <!-- Hero + Slideshow -->
+    <section class="hero container" id="home">
+      <div>
+        <h1>Sauberkeit, die man sieht.<br />Service, den man spürt.</h1>
+        <p>SpaceClean ist Ihr zuverlässiger Partner für professionelle Reinigung – flexibel, transparent und gründlich. Für Büros, Praxen, Treppenhäuser &amp; mehr.</p>
+        <div class="badges">
+          <span class="badge">100% Zufriedenheitsgarantie</span>
+          <span class="badge">Geschultes Personal</span>
+          <span class="badge">Umweltfreundliche Mittel</span>
+        </div>
+      </div>
 
-  <!-- Mobile CTA-Leiste (NUR am Ende, nicht im <head>!) -->
+      <div class="card">
+        <section class="hero-slideshow" aria-label="Referenzen">
+          <div class="slideshow-container">
+            <img src="assets/hero1.png" class="slide active" alt="Büroreinigung" />
+            <img src="assets/hero2.png" class="slide" alt="Ferienwohnung Reinigung" />
+            <img src="assets/hero3.png" class="slide" alt="Treppenhausreinigung" />
+            <img src="assets/hero4.png" class="slide" alt="Fenster- und Glasreinigung" />
+            <img src="assets/hero5.png" class="slide" alt="Hausmeisterservice" />
+            <img src="assets/hero6.png" class="slide" alt="Bäckerei Reinigung" />
+            <img src="assets/hero7.png" class="slide" alt="Reinigung" />
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Vorteile -->
+    <section class="section" id="vorteile">
+      <div class="container">
+        <h2>Warum SpaceClean?</h2>
+        <p class="lead">Mit klaren Prozessen, geprüfter Qualität und fairen Preisen liefern wir konstante Ergebnisse.</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">🧼</div>
+            <h3>Gründlich &amp; zuverlässig</h3>
+            <p>Checklisten, Vier-Augen-Prinzip und feste Ansprechpartner.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🌱</div>
+            <h3>Nachhaltig</h3>
+            <p>Schonende, zertifizierte Reinigungsmittel und ressourcenschonende Prozesse.</p>
+          </div>
+          <div class="card">
+            <div class="icon">⏱️</div>
+            <h3>Flexible Zeiten</h3>
+            <p>Wir arbeiten, wenn es für Sie passt – auch frühmorgens oder abends.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungen (Akkordeon ohne JS) -->
+    <section class="section" id="leistungen">
+      <div class="container">
+        <h2>Was wird gereinigt</h2>
+
+        <div class="accordion-list">
+          <details>
+            <summary>
+              <span>Wohnung</span>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+            </summary>
+            <div class="acc-panel">
+              <p>Grundreinigung von Wohnungen in Essen, Duisburg &amp; Bochum – Küche, Bad, Böden, Fensterrahmen. Termine nach Wunsch.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>Haus</span>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+            </summary>
+            <div class="acc-panel">
+              <p>Komplette Hausreinigung inkl. Treppenhaus, Oberflächen, Sanitär. Schonende Mittel, zuverlässige Teams.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>Büro</span>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+            </summary>
+            <div class="acc-panel">
+              <p>Büroreinigung mit Diskretion: Arbeitsplätze, Teeküche, Sanitär, Glas. Auf Wunsch außerhalb der Öffnungszeiten.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>Praxis</span>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+            </summary>
+            <div class="acc-panel">
+              <p>Hygienische Praxisreinigung nach Plan: Wartezimmer, Behandlungsräume, Desinfektion gemäß Vorgaben.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>Fenster</span>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+            </summary>
+            <div class="acc-panel">
+              <p>Streifenfreie Glas- und Rahmenreinigung – innen &amp; außen, auch Schaufenster.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="center">
+          <a class="btn" href="#kontakt">Angebot anfragen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bewertungen -->
+    <section id="bewertungen" class="section">
+      <div class="container">
+        <h2>Kundenbewertungen</h2>
+        <p class="lead">Echte Rückmeldungen aus dem Ruhrgebiet.</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <p>„Schnell, gründlich und zuverlässig. Unser Büro in der Innenstadt ist jeden Morgen tipptopp!“</p>
+            <div class="small">★★★★★ – M. Schneider, <strong>Essen</strong></div>
+          </div>
+
+          <div class="card">
+            <p>„Fenster wie neu! Sehr freundliches Team und faire Preise. Absolut empfehlenswert.“</p>
+            <div class="small">★★★★★ – M. Kaya, <strong>Duisburg</strong></div>
+          </div>
+
+          <div class="card">
+            <p>„Treppenhausreinigung perfekt umgesetzt. Pünktlich, sauber, unkompliziert.“</p>
+            <div class="small">★★★★★ – L. Roth, <strong>Bochum</strong></div>
+          </div>
+
+          <div class="card">
+            <p>„Schnelle Angebotserstellung, super Kommunikation und top Ergebnis in unserer Ferienwohnung.“</p>
+            <div class="small">★★★★★ – A. Becker, <strong>Essen</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt / Formular -->
+    <section class="section" id="kontakt">
+      <div class="container contact">
+        <div>
+          <h2>Angebot anfragen</h2>
+          <p class="lead">Erzählen Sie uns kurz, was gereinigt werden soll – wir melden uns schnell mit einem Angebot.</p>
+
+          <form id="contact-form" action="https://formspree.io/f/myznlqbb" method="POST">
+            <label>Ihr Name</label>
+            <input type="text" name="name" required /><br /><br />
+
+            <label>E-Mail</label>
+            <input type="email" name="email" required /><br /><br />
+
+            <label>Telefon</label>
+            <input type="tel" name="phone" /><br /><br />
+
+            <label>Nachricht</label>
+            <textarea name="message" placeholder="Objektart, Fläche, Wunschtermine ..." required></textarea><br /><br />
+
+            <input type="hidden" name="_subject" value="Neue Anfrage über SpaceClean-Website" />
+            <input type="hidden" name="_language" value="de" />
+            <input type="hidden" name="_gotcha" style="display:none" />
+
+            <button class="btn btn-primary" type="submit">Absenden</button>
+          </form>
+
+          <p class="small">
+            Danke! Wir melden uns in Kürze bei Ihnen.<br />
+            Hinweis: Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten zur Bearbeitung Ihrer Anfrage zu.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Kontakt</h3>
+          <p><strong>SpaceClean</strong><br />Witzheldener Straße 12<br />40591 Düsseldorf</p>
+          <p>Telefon: <a href="tel:+491733570004">+49 173 3570004</a><br />
+             E-Mail: <a href="mailto:spacestays1@gmail.com">spacestays1@gmail.com</a></p>
+          <p class="small">Öffnungszeiten: Rund um die Uhr!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 SpaceClean – Alle Rechte vorbehalten</p>
+    <p>
+      <a href="impressum.html">Impressum</a> |
+      <a href="datenschutz.html">Datenschutz</a> |
+      <a href="agb.html">AGB</a>
+    </p>
+  </footer>
+
+  <!-- Mobile CTA-Leiste (nur unten) -->
   <div class="mobile-cta">
     <a href="#kontakt">Angebot anfragen</a>
     <a href="tel:+491733570004">Anrufen</a>
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
-  <!-- Fester Hintergrund: SpaceClean-Logo -->
-  <div class="page-bg" aria-hidden="true"></div>
-  <!-- …dein restlicher Code… -->
-<header class="header">
-  <div class="container nav">
-    <div class="brand">
-      <!-- Dein Logo -->
-      <img src="assets/SpaceClean.jpg" alt="SpaceClean Logo" style="height: 66px;">
-      <span class="name">SpaceClean</span>
-    </div>
-
-    <div class="center-contact">
-      <span>📞 <a href="tel:+491733570004">+49 173 3570004</a></span>
-      <span class="dot"></span>
-      <span>✉️ <a href="mailto:spacestays1@gmail.com">spacestays1@gmail.com</a></span>
-      <span class="dot"></span>
-      <span>📍 Nordrhein-Westfahlen</span>
-    </div>
-
-    <div class="actions">
-      <a class="btn" href="#leistungen">Leistungen</a>
-      <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
-    </div>
-  </div>
-</header>
-
-<main>
-  <section class="hero container" id="home">
-    <div>
-      <h1>Sauberkeit, die man sieht.<br>Service, den man spürt.</h1>
-      <p>SpaceClean ist Ihr zuverlässiger Partner für professionelle Reinigung – flexibel, transparent und gründlich. Für Büros, Praxen, Treppenhäuser &amp; mehr.</p>
-      <div class="badges">
-        <span class="badge">100% Zufriedenheitsgarantie</span>
-        <span class="badge">Geschultes Personal</span>
-        <span class="badge">Umweltfreundliche Mittel</span>
-      </div>
-    </div>
-    <div class="card">
-     <!-- Hero Slideshow -->
-<section class="hero-slideshow">
-  <div class="slideshow-container">
-    <img src="assets/hero1.png" class="slide active" alt="Büroreinigung">
-    <img src="assets/hero2.png" class="slide" alt="Ferienwohnung Reinigung">
-    <img src="assets/hero3.png" class="slide" alt="Treppenhausreinigung">
-    <img src="assets/hero4.png" class="slide" alt="Fenster- und Glasreinigung">
-    <img src="assets/hero5.png" class="slide" alt="Hausmeisterservice">
-    <img src="assets/hero6.png" class="slide" alt="Bäckerei Reinigung">
-     <img src="assets/hero7.png" class="slide" alt="Reinigung">
-  </div>
-</section>
-    </div>
-  </section>
-
-  <section class="section" id="vorteile">
-    <div class="container">
-      <h2>Warum SpaceClean?</h2>
-      <p class="lead">Mit klaren Prozessen, geprüfter Qualität und fairen Preisen liefern wir konstante Ergebnisse.</p>
-      <div class="grid-3">
-        <div class="card">
-          <div class="icon">🧼</div>
-          <h3>Gründlich &amp; zuverlässig</h3>
-          <p>Checklisten, Vier-Augen-Prinzip und feste Ansprechpartner.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🌱</div>
-          <h3>Nachhaltig</h3>
-          <p>Schonende, zertifizierte Reinigungsmittel und ressourcenschonende Prozesse.</p>
-        </div>
-        <div class="card">
-          <div class="icon">⏱️</div>
-          <h3>Flexible Zeiten</h3>
-          <p>Wir arbeiten, wenn es für Sie passt – auch frühmorgens oder abends.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section class="section" id="leistungen-accordion">
-  <div class="container">
-    <h2>Was wird gereinigt</h2>
-
-    <div class="accordion" role="tablist">
-      <!-- Item 1 -->
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="acc-panel-wohn" id="acc-wohn">
-          <span>Wohnung</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="acc-panel" id="acc-panel-wohn" role="region" aria-labelledby="acc-wohn" hidden>
-          <p>Ein Um- oder Auszug? Grundreinigung deiner Wohnung in Essen, Duisburg oder Bochum – inklusive Küche, Bad und Bodenpflege. Termine nach Wunsch.</p>
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="acc-panel-haus" id="acc-haus">
-          <span>Haus</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="acc-panel" id="acc-panel-haus" role="region" aria-labelledby="acc-haus" hidden>
-          <p>Komplette Hausreinigung – von Treppenhaus bis Fenster. Schonende Reinigungsmittel, zuverlässige Teams, feste Ansprechpartner.</p>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="acc-panel-buero" id="acc-buero">
-          <span>Büro</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="acc-panel" id="acc-panel-buero" role="region" aria-labelledby="acc-buero" hidden>
-          <p>Büroreinigung mit Diskretion: Arbeitsplätze, Sanitär, Teeküchen, Glas. Reinigung außerhalb der Geschäftszeiten möglich.</p>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="acc-panel-praxis" id="acc-praxis">
-          <span>Praxis</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="acc-panel" id="acc-panel-praxis" role="region" aria-labelledby="acc-praxis" hidden>
-          <p>Hygienische Praxisreinigung nach Plan: Wartezimmer, Behandlungsräume, Desinfektion gemäß Vorgaben.</p>
-        </div>
-      </div>
-
-      <!-- Item 5 -->
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="acc-panel-fenster" id="acc-fenster">
-          <span>Fenster</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="acc-panel" id="acc-panel-fenster" role="region" aria-labelledby="acc-fenster" hidden>
-          <p>Streifenfreie Glas- und Rahmenreinigung – innen & außen, auf Wunsch inkl. Schaufenster.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optionaler Button -->
-    <div class="center">
-      <a class="btn" href="#kontakt">Angebot anfragen</a>
-    </div>
-  </div>
-</section>
-<section id="bewertungen" class="section">
-  <div class="container">
-    <h2>Kundenbewertungen</h2>
-    <p class="lead">Echte Rückmeldungen aus dem Ruhrgebiet.</p>
-
-    <div class="grid-3">
-      <div class="card">
-        <p>„Schnell, gründlich und zuverlässig. Unser Büro in der Innenstadt ist jeden Morgen tipptopp!“</p>
-        <div class="small">★★★★★ – M. Schneider, <strong>Essen</strong></div>
-      </div>
-
-      <div class="card">
-        <p>„Fenster wie neu! Sehr freundliches Team und faire Preise. Absolut empfehlenswert.“</p>
-        <div class="small">★★★★★ – M. Kaya, <strong>Duisburg</strong></div>
-      </div>
-
-      <div class="card">
-        <p>„Treppenhausreinigung perfekt umgesetzt. Pünktlich, sauber, unkompliziert.“</p>
-        <div class="small">★★★★★ – L. Roth, <strong>Bochum</strong></div>
-      </div>
-
-      <div class="card">
-        <p>„Schnelle Angebotserstellung, super Kommunikation und top Ergebnis in unserer Ferienwohnung.“</p>
-        <div class="small">★★★★★ – A. Becker, <strong>Essen</strong></div>
-      </div>
-    </div>
-  </div>
-</section>
-  <section class="section" id="leistungen-accordion">
-  <div class="container">
-    <h2>Was wird gereinigt</h2>
-
-    <div class="accordion-list">
-      <details>
-        <summary>
-          <span>Wohnung</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-        </summary>
-        <div class="acc-panel">
-          <p>Grundreinigung von Wohnungen in Essen, Duisburg & Bochum – Küche, Bad, Böden, Fensterrahmen. Termine nach Wunsch.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <span>Haus</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-        </summary>
-        <div class="acc-panel">
-          <p>Komplette Hausreinigung inkl. Treppenhaus, Oberflächen, Sanitär. Schonende Mittel, zuverlässige Teams.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <span>Büro</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-        </summary>
-        <div class="acc-panel">
-          <p>Büroreinigung mit Diskretion: Arbeitsplätze, Teeküche, Sanitär, Glas. Auf Wunsch außerhalb der Öffnungszeiten.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <span>Praxis</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-        </summary>
-        <div class="acc-panel">
-          <p>Hygienische Praxisreinigung nach Plan: Wartezimmer, Behandlungsräume, Desinfektion gemäß Vorgaben.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <span>Fenster</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-        </summary>
-        <div class="acc-panel">
-          <p>Streifenfreie Glas- und Rahmenreinigung – innen & außen, auch Schaufenster.</p>
-        </div>
-      </details>
-    </div>
-
-    <div class="center">
-      <a class="btn" href="#kontakt">Angebot anfragen</a>
-    </div>
-  </div>
-</section>
-  <section class="section" id="kontakt">
-    <div class="container contact">
-      <div>
-        <h2>Angebot anfragen</h2>
-        <p class="lead">Erzählen Sie uns kurz, was gereinigt werden soll – wir melden uns schnell mit einem Angebot.</p>
-      <form id="contact-form" action="https://formspree.io/f/myznlqbb" method="POST">
-  <label>Ihr Name</label>
-  <input type="text" name="name" required><br><br>
-
-  <label>E-Mail</label>
-  <input type="email" name="email" required><br><br>
-
-  <label>Telefon</label>
-  <input type="tel" name="phone"><br><br>
-
-  <label>Nachricht</label>
-  <textarea name="message" placeholder="Objektart, Fläche, Wunschtermine ..." required></textarea><br><br>
-
-  <!-- Optional: versteckte Felder -->
-  <input type="hidden" name="_subject" value="Neue Anfrage über SpaceClean-Website">
-  <input type="hidden" name="_language" value="de">
-  <input type="hidden" name="_gotcha" style="display:none"> <!-- Spam-Schutz -->
-
-  <button class="btn btn-primary" type="submit">Absenden</button>
-</form>
-
-<p class="small">
-  Danke! Wir melden uns in Kürze bei Ihnen.<br>
-  Hinweis: Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten zur Bearbeitung Ihrer Anfrage zu.
-</p>
-      </div>
-      <div class="card">
-        <h3>Kontakt</h3>
-        <p><strong>SpaceClean</strong><br>
-           Witzheldener Straße 12<br>
-           40591 Düsseldorf</p>
-        <p>Telefon: <a href="tel:+491733570004">+49 173 3570004</a><br>
-           E-Mail: <a href="mailto:spacestays1@gmail.com">spacestays1@gmail.com</a></p>
-        <p class="small">Öffnungszeiten: Rund um die Uhr!</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <p>© 2025 SpaceClean – Alle Rechte vorbehalten</p>
-  <p>
-    <a href="impressum.html">Impressum</a> |
-    <a href="datenschutz.html">Datenschutz</a> |
-    <a href="agb.html">AGB</a>
-  </p>
-</footer>
-
-<script src="script.js"></script>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <!-- Dein Script (Slideshow etc.) -->
+  <script src="script.js" defer></script>
 </body>
 </html>
