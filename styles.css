@@ -263,3 +263,11 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
   margin-top: 24px;
   margin-bottom: 48px; /* mehr Luft nach unten */
 }
+/* ===== NRW-Karte ===== */
+.map-card { padding: 0; border-radius: 14px; overflow: hidden; }
+#nrw-map { width: 100%; height: 420px; background: #eef2f7; }
+
+/* Mobile etwas kompakter */
+@media (max-width: 768px){
+  #nrw-map { height: 320px; }
+}
