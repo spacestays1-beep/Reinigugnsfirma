@@ -388,3 +388,40 @@ body {
 
 /* Buttons zentrieren */
 .center{ display: flex; justify-content: center; margin-top: 8px; }
+/* Akkordeon (zero-JS mit <details>) */
+.accordion-list { display: grid; gap: 12px; }
+
+.accordion-list details {
+  background: #f7f7f8;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(2,6,23,.05);
+  overflow: hidden;
+}
+
+.accordion-list summary {
+  list-style: none;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  padding: 18px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.accordion-list summary::-webkit-details-marker { display: none; }
+
+.accordion-list .chev {
+  width: 22px; height: 22px; flex: 0 0 auto;
+  stroke: #64748b; stroke-width: 2; fill: none;
+  transition: transform .2s ease;
+}
+.accordion-list details[open] .chev { transform: rotate(180deg); }
+
+.accordion-list .acc-panel {
+  margin: 0 16px 16px 16px;
+  background: #e9f2f5;         /* dezentes Blau wie im Beispiel */
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #334155;
+}
+
+#leistungen-accordion h2 { margin-bottom: 12px; }
+.center { display: flex; justify-content: center; margin-top: 8px; }
