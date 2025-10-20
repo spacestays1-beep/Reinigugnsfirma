@@ -27,8 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2500);
   }
 
-  // Hinweis: Für das neue Akkordeon (details/summary) ist KEIN JS nötig.
-
   // === NRW-Karte mit Leaflet ===
   const mapEl = document.getElementById('nrw-map');
   if (mapEl && typeof L !== 'undefined') {
@@ -39,18 +37,21 @@ document.addEventListener('DOMContentLoaded', () => {
       zoomControl: true
     });
 
-    // OSM Tiles laden
+    // OSM Tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap-Mitwirkende'
     }).addTo(map);
 
     // Koordinaten (Lat, Lng)
     const spots = [
-      { name: 'Düsseldorf (Hauptstandort)', lat: 51.2277, lng: 6.7735, primary: true },
-      { name: 'Essen',          lat: 51.4556, lng: 7.0116 },
-      { name: 'Duisburg',       lat: 51.4344, lng: 6.7623 },
-      { name: 'Gelsenkirchen',  lat: 51.5177, lng: 7.0857 },
-      { name: 'Wuppertal',      lat: 51.2562, lng: 7.1508 }
+      { name: 'Essen (Hauptstandort)', lat: 51.4556, lng: 7.0116, primary: true },
+      { name: 'Duisburg',      lat: 51.4344, lng: 6.7623 },
+      { name: 'Düsseldorf',    lat: 51.2277, lng: 6.7735 },
+      { name: 'Gelsenkirchen', lat: 51.5177, lng: 7.0857 },
+      { name: 'Wuppertal',     lat: 51.2562, lng: 7.1508 },
+      { name: 'Bochum',        lat: 51.4818, lng: 7.2197 },
+      { name: 'Oberhausen',    lat: 51.4963, lng: 6.8638 },
+      { name: 'Mülheim an der Ruhr', lat: 51.4312, lng: 6.8846 }
     ];
 
     // Grüner Marker-Stil (passend zum Branding)
@@ -65,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bounds.push([s.lat, s.lng]);
     });
 
-    // Auf alle Marker zoomen
+    // Karte automatisch auf alle Marker zentrieren
     map.fitBounds(bounds, { padding: [30, 30] });
 
     // Nicht zu weit reinzoomen bei schmalen Screens
