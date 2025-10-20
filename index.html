@@ -113,44 +113,73 @@
     </div>
   </section>
 
-  <section class="section" id="leistungen">
-    <div class="container">
-      <h2>Unsere Leistungen</h2>
-      <p class="lead">Wählen Sie die Services, die zu Ihrem Objekt passen.</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Unterhaltsreinigung</h3>
-          <p>Regelmäßige Reinigung für Büros, Praxen, Ladengeschäfte und öffentliche Einrichtungen.</p>
-          <ul>
-            <li>Oberflächen &amp; Sanitär</li>
-            <li>Böden saugen &amp; wischen</li>
-            <li>Müllentsorgung</li>
-          </ul>
+<section class="section" id="leistungen-accordion">
+  <div class="container">
+    <h2>Was wird gereinigt</h2>
+
+    <div class="accordion" role="tablist">
+      <!-- Item 1 -->
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false" aria-controls="acc-panel-wohn" id="acc-wohn">
+          <span>Wohnung</span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-panel" id="acc-panel-wohn" role="region" aria-labelledby="acc-wohn" hidden>
+          <p>Ein Um- oder Auszug? Grundreinigung deiner Wohnung in Essen, Duisburg oder Bochum – inklusive Küche, Bad und Bodenpflege. Termine nach Wunsch.</p>
         </div>
-        <div class="card">
-          <h3>Ferienwohnungen</h3>
-          <p>Sauberkeit und Glanz für eure FeWo´s!
+      </div>
+
+      <!-- Item 2 -->
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false" aria-controls="acc-panel-haus" id="acc-haus">
+          <span>Haus</span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-panel" id="acc-panel-haus" role="region" aria-labelledby="acc-haus" hidden>
+          <p>Komplette Hausreinigung – von Treppenhaus bis Fenster. Schonende Reinigungsmittel, zuverlässige Teams, feste Ansprechpartner.</p>
         </div>
-         <div class="card">
-          <h3>Treppenhäuser</h3>
-          <p>Regelmäßige Reinigung für Mehrfamilienhäuser, Büros etc.</p>
-          <ul>
-            <li>Hauseingang, Treppen &amp; Fenster</li>
-            <li>Müllentsorgung</li>
-          </ul>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false" aria-controls="acc-panel-buero" id="acc-buero">
+          <span>Büro</span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-panel" id="acc-panel-buero" role="region" aria-labelledby="acc-buero" hidden>
+          <p>Büroreinigung mit Diskretion: Arbeitsplätze, Sanitär, Teeküchen, Glas. Reinigung außerhalb der Geschäftszeiten möglich.</p>
         </div>
-        <div class="card">
-          <h3>Glas- &amp; Fensterreinigung</h3>
-          <p>Schlierenfrei und sicher – innen wie außen, auch schwer zugängliche Bereiche.</p>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false" aria-controls="acc-panel-praxis" id="acc-praxis">
+          <span>Praxis</span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-panel" id="acc-panel-praxis" role="region" aria-labelledby="acc-praxis" hidden>
+          <p>Hygienische Praxisreinigung nach Plan: Wartezimmer, Behandlungsräume, Desinfektion gemäß Vorgaben.</p>
         </div>
-        <div class="card">
-        <div class="card">
-          <h3>Hausmeisterservice</h3>
-          <p>Kleinreparaturen, Außenanlagenpflege und Winterdienst über Partner möglich.</p>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false" aria-controls="acc-panel-fenster" id="acc-fenster">
+          <span>Fenster</span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-panel" id="acc-panel-fenster" role="region" aria-labelledby="acc-fenster" hidden>
+          <p>Streifenfreie Glas- und Rahmenreinigung – innen & außen, auf Wunsch inkl. Schaufenster.</p>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- Optionaler Button -->
+    <div class="center">
+      <a class="btn" href="#kontakt">Angebot anfragen</a>
+    </div>
+  </div>
+</section>
 <section id="bewertungen" class="section">
   <div class="container">
     <h2>Kundenbewertungen</h2>
