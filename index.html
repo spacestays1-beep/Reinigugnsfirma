@@ -3,24 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SpaceClean – Reinigungsfirma</title>
-  <meta name="description" content="SpaceClean – professionelle Gebäudereinigung für Wohnungen, Häuser, Büros, Praxen und Fenster in Essen, Duisburg & Bochum." />
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Leaflet CSS (für die NRW-Karte) -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-  crossorigin=""
-/>
+  <!-- SEO Titel & Beschreibung -->
+  <title>SpaceClean – Reinigungsfirma in Essen & NRW</title>
+  <meta name="description" content="SpaceClean – Ihre Reinigungsfirma in NRW. Professionelle Gebäudereinigung, Büroreinigung, Fensterreinigung & Hausmeisterservice in Essen, Duisburg, Düsseldorf, Bochum, Gelsenkirchen, Oberhausen, Mülheim & Wuppertal." />
+  <meta name="keywords" content="Reinigungsfirma Essen, Gebäudereinigung NRW, Büroreinigung Düsseldorf, Fensterreinigung Bochum, Treppenhausreinigung, Hausmeisterservice, Reinigung Duisburg, Reinigung Wuppertal, Reinigung Oberhausen, Reinigung Mülheim, SpaceClean" />
 
-<!-- Deine Styles -->
-<link rel="stylesheet" href="styles.css">
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4w0a0JbINhHRnHZRc6Ptq7iMyi25hSoBTo89RMw3cY=" crossorigin="" />
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- Platz für JSON-LD / SEO -->
+  <!-- Strukturierte Daten für Google (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SpaceClean",
+    "image": "https://www.spaceclean.info/assets/SpaceClean.jpg",
+    "telephone": "+49 173 3570004",
+    "email": "spacestays1@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Witzheldener Straße 12",
+      "addressLocality": "Düsseldorf",
+      "postalCode": "40591",
+      "addressCountry": "DE"
+    },
+    "url": "https://www.spaceclean.info",
+    "priceRange": "€€",
+    "areaServed": [
+      "Essen", "Duisburg", "Düsseldorf", "Bochum",
+      "Gelsenkirchen", "Oberhausen", "Mülheim an der Ruhr", "Wuppertal"
+    ],
+    "description": "Professionelle Gebäudereinigung für Wohnungen, Häuser, Büros und Praxen in ganz NRW. SpaceClean – Sauberkeit, die man sieht.",
+    "sameAs": []
+  }
+  </script>
 </head>
-
 <body>
   <!-- Fester Hintergrund: SpaceClean-Logo -->
   <div class="page-bg" aria-hidden="true"></div>
