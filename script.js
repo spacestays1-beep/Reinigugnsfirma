@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
       { name: 'Mülheim an der Ruhr', lat: 51.4312, lng: 6.8846 }
     ];
 
-    // Grüner Marker-Stil (passend zum Branding)
-    const baseStyle = { radius: 8, color: '#16a34a', weight: 2, fillColor: '#4ade80', fillOpacity: 0.9 };
+    // Grüner Marker-Stil (Branding)
+    const baseStyle = { radius: 8,  color: '#16a34a', weight: 2, fillColor: '#4ade80', fillOpacity: 0.9 };
     const mainStyle = { radius: 10, color: '#166534', weight: 3, fillColor: '#22c55e', fillOpacity: 1 };
 
     const bounds = [];
@@ -66,5 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bounds.push([s.lat, s.lng]);
     });
 
-    // Karte automatisch auf alle Marker zentrieren
-   map.fitBounds(bounds, { padding: [50, 50], maxZoom: 9 });
+    // Auf alle Marker zoomen (mit Limit, damit Handy nicht zu nah ist)
+    map.fitBounds(bounds, { padding: [50, 50], maxZoom: 9 });
+  } // <-- schließt if(mapEl && L)
+}); // <-- schließt DOMContentLoaded
