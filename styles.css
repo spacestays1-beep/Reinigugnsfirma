@@ -271,3 +271,54 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
 @media (max-width: 768px){
   #nrw-map { height: 320px; }
 }
+/* ===== Leaflet Fixes & Map Layout ===== */
+
+/* Kritisch: verhindert zerschossene Tiles durch globales img { max-width:100% } */
+.leaflet-container img,
+.leaflet-pane img,
+.leaflet-marker-icon,
+.leaflet-tile {
+  max-width: none !important;
+}
+
+/* Map-Card und -Container */
+.map-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+#nrw-map {
+  width: 100%;
+  height: 420px;         /* Desktop-Höhe */
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Legende unter der Karte */
+.map-legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  background: #fff;
+  border-radius: 0 0 12px 12px;
+  font-size: 14px;
+}
+.map-legend .spacer { width: 18px; }
+
+.dot {
+  display:inline-block;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  border:2px solid;
+  vertical-align:middle;
+}
+.dot-main { background:#22c55e; border-color:#166534; }
+.dot-sub  { background:#4ade80; border-color:#16a34a; }
+
+/* Mobile: etwas flacher, damit Marker sichtbar bleiben */
+@media (max-width: 768px) {
+  #nrw-map { height: 320px; }
+}
