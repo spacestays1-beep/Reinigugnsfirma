@@ -67,13 +67,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Karte automatisch auf alle Marker zentrieren
-    map.fitBounds(bounds, { padding: [30, 30] });
-
-   // Nicht zu weit reinzoomen bei schmalen Screens
-if (window.innerWidth < 768) {
-  map.setZoom(8); // auf Handy: weiter rauszoomen
-} else if (map.getZoom() > 10) {
-  map.setZoom(10); // auf Laptop: leicht raus
-}
-  }
-});
+   map.fitBounds(bounds, { padding: [50, 50], maxZoom: 9 });
