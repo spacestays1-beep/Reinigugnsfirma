@@ -193,32 +193,33 @@
     </section>
 
    <!-- Karte (statisch, ohne JS) -->
+<!-- Karte (statisch, ohne Leaflet) -->
 <section class="section" id="karte">
   <div class="container">
     <h2>Einsatzgebiet in NRW</h2>
     <p class="lead">Hauptstandort Essen – unterwegs im ganzen Ruhrgebiet &amp; NRW.</p>
 
     <div class="card map-card">
-      <div class="nrw-static-map">
-        <!-- Dein NRW-Bild -->
+      <div class="nrw-static-map" aria-label="Karte von NRW">
+        <!-- WICHTIG: Bild muss existieren unter /assets/nrw-map.png -->
         <img src="assets/nrw-map.png" alt="Karte von NRW">
 
-        <!-- Pins (Position per Prozent, beliebig anpassbar) -->
-        <button class="pin pin-main" style="--x:50%; --y:58%" aria-label="Essen (Hauptstandort)" title="Essen (Hauptstandort)"></button>
-
-        <button class="pin" style="--x:44%; --y:60%" aria-label="Mülheim"     title="Mülheim"></button>
-        <button class="pin" style="--x:43%; --y:57%" aria-label="Oberhausen"  title="Oberhausen"></button>
-        <button class="pin" style="--x:46%; --y:55%" aria-label="Gelsenkirchen" title="Gelsenkirchen"></button>
-        <button class="pin" style="--x:48%; --y:63%" aria-label="Bochum"      title="Bochum"></button>
-        <button class="pin" style="--x:41%; --y:62%" aria-label="Duisburg"    title="Duisburg"></button>
-        <button class="pin" style="--x:37%; --y:68%" aria-label="Düsseldorf"  title="Düsseldorf"></button>
-        <button class="pin" style="--x:58%; --y:70%" aria-label="Wuppertal"   title="Wuppertal"></button>
+        <!-- Pins (Position in %, kannst du feinjustieren) -->
+        <button class="pin main" style="left:52%; top:53%"  title="Essen (Hauptstandort)" aria-label="Essen (Hauptstandort)"></button>
+        <button class="pin"       style="left:45%; top:55%"  title="Mülheim"           aria-label="Mülheim"></button>
+        <button class="pin"       style="left:43%; top:51%"  title="Oberhausen"        aria-label="Oberhausen"></button>
+        <button class="pin"       style="left:56%; top:50%"  title="Gelsenkirchen"     aria-label="Gelsenkirchen"></button>
+        <button class="pin"       style="left:58%; top:58%"  title="Bochum"            aria-label="Bochum"></button>
+        <button class="pin"       style="left:62%; top:54%"  title="Dortmund (optional)" aria-label="Dortmund"></button>
+        <button class="pin"       style="left:40%; top:58%"  title="Duisburg"          aria-label="Duisburg"></button>
+        <button class="pin"       style="left:36%; top:64%"  title="Düsseldorf"        aria-label="Düsseldorf"></button>
+        <button class="pin"       style="left:70%; top:66%"  title="Wuppertal"         aria-label="Wuppertal"></button>
       </div>
 
       <!-- Legende -->
       <div class="map-legend">
         <span class="dot dot-main"></span> Hauptstandort
-        <span class="legend-spacer"></span>
+        <span class="spacer"></span>
         <span class="dot dot-sub"></span> Einsatzorte in NRW
       </div>
     </div>
