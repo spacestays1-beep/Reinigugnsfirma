@@ -196,25 +196,38 @@
       </div>
     </section>
 
-    <!-- Karte -->
-    <section class="section" id="karte">
-      <div class="container">
-        <h2>Einsatzgebiet in NRW</h2>
-        <p class="lead">Hauptstandort Essen – unterwegs im ganzen Ruhrgebiet &amp; NRW.</p>
+   <!-- Karte (statisch, ohne JS) -->
+<section class="section" id="karte">
+  <div class="container">
+    <h2>Einsatzgebiet in NRW</h2>
+    <p class="lead">Hauptstandort Essen – unterwegs im ganzen Ruhrgebiet &amp; NRW.</p>
 
-        <div class="card map-card">
-          <!-- Fallback-Style sorgt dafür, dass die Karte immer eine Höhe hat -->
-          <div id="nrw-map" aria-label="Karte von NRW mit Standorten" style="width:100%; height:420px;"></div>
+    <div class="card map-card">
+      <div class="nrw-static-map">
+        <!-- Dein NRW-Bild -->
+        <img src="assets/nrw-map.png" alt="Karte von NRW">
 
-          <!-- Legende -->
-          <div class="map-legend">
-            <span class="dot dot-main"></span> Hauptstandort
-            <span class="spacer"></span>
-            <span class="dot dot-sub"></span> Einsatzorte in NRW
-          </div>
-        </div>
+        <!-- Pins (Position per Prozent, beliebig anpassbar) -->
+        <button class="pin pin-main" style="--x:50%; --y:58%" aria-label="Essen (Hauptstandort)" title="Essen (Hauptstandort)"></button>
+
+        <button class="pin" style="--x:44%; --y:60%" aria-label="Mülheim"     title="Mülheim"></button>
+        <button class="pin" style="--x:43%; --y:57%" aria-label="Oberhausen"  title="Oberhausen"></button>
+        <button class="pin" style="--x:46%; --y:55%" aria-label="Gelsenkirchen" title="Gelsenkirchen"></button>
+        <button class="pin" style="--x:48%; --y:63%" aria-label="Bochum"      title="Bochum"></button>
+        <button class="pin" style="--x:41%; --y:62%" aria-label="Duisburg"    title="Duisburg"></button>
+        <button class="pin" style="--x:37%; --y:68%" aria-label="Düsseldorf"  title="Düsseldorf"></button>
+        <button class="pin" style="--x:58%; --y:70%" aria-label="Wuppertal"   title="Wuppertal"></button>
       </div>
-    </section>
+
+      <!-- Legende -->
+      <div class="map-legend">
+        <span class="dot dot-main"></span> Hauptstandort
+        <span class="legend-spacer"></span>
+        <span class="dot dot-sub"></span> Einsatzorte in NRW
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Kontakt -->
     <section class="section" id="kontakt">
