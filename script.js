@@ -1,91 +1,87 @@
-// script.js — optimized for SpaceClean
+// script.js — stabilisierte Version (Slideshow + Leaflet Map)
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== Helpers =====
-  const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
-  const throttle = (fn, wait = 150) => {
-    let last = 0, t;
-    return (...args) => {
-      const now = Date.now();
-      if (now - last >= wait) {
-        last = now; fn.apply(null, args);
-      } else {
-        clearTimeout(t);
-        t = setTimeout(() => { last = Date.now(); fn.apply(null, args); }, wait - (now - last));
-      }
-    };
-  };
-
-  // ===== Smooth Scroll =====
+  /* ===== Smooth Scroll ===== */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href').slice(1);
-      const el = id && document.getElementById(id);
-      if (!el) return;
-      e.preventDefault();
-      el.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
-    }, { passive: true });
+      if (!id) return;
+      const el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
 
-  // ===== Slideshow =====
+  /* ===== Slideshow ===== */
   const slides = Array.from(document.querySelectorAll('.slide'));
   if (slides.length) {
     let i = slides.findIndex(s => s.classList.contains('active'));
     if (i < 0) { i = 0; slides[0].classList.add('active'); }
-
-    let timer;
-    const step  = () => { slides[i].classList.remove('active'); i = (i + 1) % slides.length; slides[i].classList.add('active'); };
-    const start = () => { if (!timer && slides.length > 1) timer = setInterval(step, 2500); };
-    const stop  = () => { if (timer) { clearInterval(timer); timer = null; } };
-
-    document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
-    if ('IntersectionObserver' in window) {
-      const hero = document.querySelector('.hero-slideshow') || slides[0];
-      new IntersectionObserver(es => (es[0]?.isIntersecting ? start() : stop()), { threshold: 0.15 }).observe(hero);
-    } else { start(); }
+    setInterval(() => {
+      slides[i].classList.remove('active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('active');
+    }, 2500);
   }
 
-  // ===== NRW-Map (Leaflet) =====
+  /* ===== Leaflet NRW Map ===== */
   const mapEl = document.getElementById('nrw-map');
-  if (mapEl && typeof window.L !== 'undefined') {
-    const map = L.map(mapEl, {
-      scrollWheelZoom: false,
-      dragging: true,
-      zoomControl: true
-    });
+  if (!mapEl || typeof L === 'undefined') return;
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap-Mitwirkende',
-      maxZoom: 18
-    }).addTo(map);
+  // Karte erzeugen (ohne View; wir fitBounds(en) später)
+  const map = L.map(mapEl, {
+    zoomControl: true,
+    dragging: true,
+    scrollWheelZoom: false
+  });
 
-    const spots = [
-      { name: 'Essen (Hauptstandort)', lat: 51.4556, lng: 7.0116, primary: true },
-      { name: 'Duisburg',              lat: 51.4344, lng: 6.7623 },
-      { name: 'Düsseldorf',            lat: 51.2277, lng: 6.7735 },
-      { name: 'Gelsenkirchen',         lat: 51.5177, lng: 7.0857 },
-      { name: 'Wuppertal',             lat: 51.2562, lng: 7.1508 },
-      { name: 'Bochum',                lat: 51.4818, lng: 7.2197 },
-      { name: 'Oberhausen',            lat: 51.4963, lng: 6.8638 },
-      { name: 'Mülheim an der Ruhr',   lat: 51.4312, lng: 6.8846 }
-    ];
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap-Mitwirkende'
+  }).addTo(map);
 
-    const baseStyle = { radius: 8,  color: '#16a34a', weight: 2, fillColor: '#4ade80', fillOpacity: 0.9 };
-    const mainStyle = { radius: 10, color: '#166534', weight: 3, fillColor: '#22c55e', fillOpacity: 1 };
+  // Standorte
+  const spots = [
+    { name: 'Essen (Hauptstandort)', lat: 51.4556, lng: 7.0116, primary: true },
+    { name: 'Duisburg',              lat: 51.4344, lng: 6.7623 },
+    { name: 'Düsseldorf',            lat: 51.2277, lng: 6.7735 },
+    { name: 'Gelsenkirchen',         lat: 51.5177, lng: 7.0857 },
+    { name: 'Wuppertal',             lat: 51.2562, lng: 7.1508 },
+    { name: 'Bochum',                lat: 51.4818, lng: 7.2197 },
+    { name: 'Oberhausen',            lat: 51.4963, lng: 6.8638 },
+    { name: 'Mülheim an der Ruhr',   lat: 51.4312, lng: 6.8846 }
+  ];
 
-    const bounds = [];
-    spots.forEach(s => {
-      const style = s.primary ? mainStyle : baseStyle;
-      const m = L.circleMarker([s.lat, s.lng], style).addTo(map);
-      m.bindPopup(`<strong>${s.name}</strong><br>SpaceClean – zuverlässig in NRW`);
-      bounds.push([s.lat, s.lng]);
-    });
+  const baseStyle = { radius: 8,  color: '#16a34a', weight: 2, fillColor: '#4ade80', fillOpacity: 0.9 };
+  const mainStyle = { radius: 10, color: '#166534', weight: 3, fillColor: '#22c55e', fillOpacity: 1 };
 
-    // Auf alle Marker zoomen (nicht zu nah, v.a. Handy)
-    map.fitBounds(bounds, { padding: [50, 50], maxZoom: 9 });
+  const bounds = [];
+  spots.forEach(s => {
+    const style = s.primary ? mainStyle : baseStyle;
+    const marker = L.circleMarker([s.lat, s.lng], style).addTo(map);
+    marker.bindPopup(`<strong>${s.name}</strong><br>SpaceClean – zuverlässig in NRW`);
+    bounds.push([s.lat, s.lng]);
+  });
 
-    // WICHTIG: nach Render (und bei Layout-Änderungen) neu rechnen
-    setTimeout(() => map.invalidateSize(), 150);
-    window.addEventListener('resize', throttle(() => map.invalidateSize(), 200));
+  // Auf alle Marker zoomen (mit Limit, damit Mobile nicht zu nah ist)
+  map.fitBounds(bounds, { padding: [50, 50], maxZoom: 9 });
+
+  // WICHTIG: Map-Container-Größe nachträglich an Leaflet melden
+  const refresh = () => map.invalidateSize();
+
+  // einmal sofort + nach kleinem Delay (gegen Layout-Shifts)
+  refresh();
+  setTimeout(refresh, 150);
+  setTimeout(refresh, 500);
+
+  // nach vollständigem Laden (Bilder/Fonts)
+  window.addEventListener('load', refresh);
+
+  // wenn Containergröße sich ändert (z.B. Tabs/Accordion/Responsive)
+  try {
+    new ResizeObserver(refresh).observe(mapEl);
+  } catch (e) {
+    // älterer Browser – nicht schlimm
   }
 });
