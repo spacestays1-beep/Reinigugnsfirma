@@ -308,3 +308,10 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
 @media (max-width: 768px) {
   #nrw-map { height: 320px; }
 }
+/* Leaflet: Kacheln & Marker dürfen NICHT durch globales img {max-width:100%} skaliert werden */
+.leaflet-container img,
+.leaflet-pane img,
+.leaflet-marker-icon,
+.leaflet-tile {
+  max-width: none !important;
+}
