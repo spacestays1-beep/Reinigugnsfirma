@@ -192,24 +192,39 @@
       </div>
     </section>
 
+<!-- Karte (OpenStreetMap + eigene Pins) -->
 <section class="section" id="karte">
   <div class="container">
     <h2>Einsatzgebiet in NRW</h2>
     <p class="lead">Hauptstandort Essen – unterwegs im ganzen Ruhrgebiet &amp; NRW.</p>
 
     <div class="card map-card">
-      <iframe
-        width="100%"
-        height="420"
-        frameborder="0"
-        scrolling="no"
-        marginheight="0"
-        marginwidth="0"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=6.5,51.1,7.4,51.6&layer=mapnik&marker=51.4556,7.0116"
-        style="border-radius:16px;">
-      </iframe>
+      <!-- Container mit Karte -->
+      <div class="map-wrapper">
+        <iframe
+          class="osm-frame"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=6.4,51.1,7.5,51.6&layer=mapnik"
+          frameborder="0"
+          scrolling="no"
+          aria-label="Karte von NRW mit Standorten">
+        </iframe>
+
+        <!-- Eigene Pins oben drauf -->
+        <div class="map-pins">
+          <div class="pin main" style="left:52%; top:53%;" title="Essen (Hauptstandort)"></div>
+          <div class="pin" style="left:45%; top:55%;" title="Mülheim"></div>
+          <div class="pin" style="left:43%; top:51%;" title="Oberhausen"></div>
+          <div class="pin" style="left:56%; top:50%;" title="Gelsenkirchen"></div>
+          <div class="pin" style="left:58%; top:58%;" title="Bochum"></div>
+          <div class="pin" style="left:40%; top:58%;" title="Duisburg"></div>
+          <div class="pin" style="left:36%; top:64%;" title="Düsseldorf"></div>
+          <div class="pin" style="left:70%; top:66%;" title="Wuppertal"></div>
+        </div>
+      </div>
+
+      <!-- Legende -->
       <div class="map-legend">
-        <span class="dot dot-main"></span> Hauptstandort Essen
+        <span class="dot dot-main"></span> Hauptstandort
         <span class="spacer"></span>
         <span class="dot dot-sub"></span> Einsatzorte in NRW
       </div>
