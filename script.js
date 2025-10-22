@@ -30,7 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const mapEl = document.getElementById('nrw-map');
   if (!mapEl || typeof L === 'undefined') return;
 
- 
+  // 1) MAP INITIALISIEREN
+  const map = L.map(mapEl, {
+    scrollWheelZoom: false,
+    dragging: true,
+    zoomControl: true
+  });
+
+  // 2) TILE-LAYER LADEN (OSM)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap-Mitwirkende'
+  }).addTo(map);
+
+  // 3) MARKER
   const spots = [
     { name: 'Essen (Hauptstandort)', lat: 51.4556, lng: 7.0116, primary: true },
     { name: 'Duisburg',              lat: 51.4344, lng: 6.7623 },
@@ -53,19 +65,15 @@ document.addEventListener('DOMContentLoaded', () => {
     bounds.push([s.lat, s.lng]);
   });
 
-  // Auf alle Marker zoomen (Limit verhindert zu nahes Mobile-Zoom)
+  // 4) AUF ALLE MARKER ZOomen (Mobile nicht zu nah)
   map.fitBounds(bounds, { padding: [50, 50], maxZoom: 9 });
 
-  // Leaflet über echte Containergröße informieren (gegen graue/versetzte Tiles)
+  // 5) RENDER-GLITCH FIXES
   const refresh = () => map.invalidateSize(true);
   refresh();
   setTimeout(refresh, 150);
   setTimeout(refresh, 500);
   window.addEventListener('load', refresh);
-
-  // Reflow-Überwachung (Tabs, Accordion, Resize, Orientation)
-  try {
-    new ResizeObserver(refresh).observe(mapEl);
-  } catch (_) {}
+  try { new ResizeObserver(refresh).observe(mapEl); } catch (_) {}
   window.addEventListener('orientationchange', () => setTimeout(refresh, 150));
 });
