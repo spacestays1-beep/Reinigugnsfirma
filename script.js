@@ -30,16 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mapEl = document.getElementById('nrw-map');
   if (!mapEl || typeof L === 'undefined') return;
 
-  const map = L.map(mapEl, {
-    zoomControl: true,
-    dragging: true,
-    scrollWheelZoom: false
-  });
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap-Mitwirkende'
-  }).addTo(map);
-
+ 
   const spots = [
     { name: 'Essen (Hauptstandort)', lat: 51.4556, lng: 7.0116, primary: true },
     { name: 'Duisburg',              lat: 51.4344, lng: 6.7623 },
