@@ -315,80 +315,51 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
 .leaflet-tile {
   max-width: none !important;
 }
-/* ===== Statische NRW-Karte (ohne JS) ===== */
-.map-card {
-  padding: 0;
-  overflow: hidden;
-  border-radius: 16px;
-}
+/* ===== Statische NRW-Karte (PNG + Pins) ===== */
+.map-card { padding: 0; overflow: hidden; border-radius: 16px; }
 
-/* Map-Container bleibt im Verhältnis, skaliert responsiv */
 .nrw-static-map {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;              /* Höhe passt sich automatisch an */
-  background: #f1f5f9;                 /* Fallback, falls Bild fehlt */
+  /* das <img> bestimmt die Höhe -> immer korrekt, keine grauen Flächen */
+  background: #eef3f7; /* zarter Hintergrund während Bild lädt */
 }
 
-.nrw-static-map img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;                  /* Karte stets komplett sichtbar */
+.nrw-static-map > img {
   display: block;
+  width: 100%;
+  height: auto;      /* Bild hält sein Seitenverhältnis */
 }
 
 /* Pins */
 .pin {
   position: absolute;
-  left: var(--x);                       /* Prozent: 0% links … 100% rechts */
-  top: var(--y);                        /* Prozent: 0% oben … 100% unten */
   transform: translate(-50%, -50%);
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  background: #4ade80;                  /* hellgrün */
-  border: 2px solid #16a34a;            /* sattes Grün */
-  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #4ade80;               /* grün hell */
+  border: 2px solid #16a34a;         /* grün dunkel */
+  box-shadow: 0 0 0 2px #ffffff80;   /* weißer Halo für bessere Lesbarkeit */
   cursor: default;
 }
 
-.pin-main {
-  width: 14px;
-  height: 14px;
-  background: #22c55e;                  /* Hauptstandort etwas kräftiger */
-  border: 2px solid #166534;
+.pin.main {
+  width: 14px; height: 14px;
+  background: #22c55e;
+  border-color: #166534;
 }
 
 /* Legende */
 .map-legend {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  border-top: 1px solid rgba(0,0,0,.06);
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px; border-top: 1px solid rgba(0,0,0,.06);
   font-size: 14px;
-  background: #fff;
 }
+.map-legend .spacer { width: 18px; }
+.dot { display:inline-block; width:12px; height:12px; border-radius:999px; }
+.dot-main { width:14px; height:14px; background:#22c55e; border:2px solid #166534; }
+.dot-sub  { background:#4ade80;   border:2px solid #16a34a; }
 
-.map-legend .legend-spacer { width: 18px; }
-
-.dot {
-  display: inline-block;
-  width: 12px; height: 12px;
-  border-radius: 999px;
-  vertical-align: middle;
-}
-.dot-main {
-  width: 14px; height: 14px;
-  background: #22c55e;
-  border: 2px solid #166534;
-}
-.dot-sub {
-  background: #4ade80;
-  border: 2px solid #16a34a;
-}
-
-/* Mobile: höher, damit Punkte nicht zu dicht */
-@media (max-width: 768px) {
-  .nrw-static-map { aspect-ratio: 4 / 3; }
+/* Optional: Mobile etwas kompakter */
+@media (max-width: 768px){
+  .map-legend { font-size: 13px; }
 }
