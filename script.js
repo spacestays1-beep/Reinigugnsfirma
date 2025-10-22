@@ -26,10 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2500);
   }
 
-  /* ===== Leaflet NRW Map ===== */
-  const mapEl = document.getElementById('nrw-map');
-  if (!mapEl || typeof L === 'undefined') return;
-
+ 
   // 1) MAP INITIALISIEREN
   const map = L.map(mapEl, {
     scrollWheelZoom: false,
