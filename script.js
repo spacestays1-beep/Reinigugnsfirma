@@ -1,4 +1,4 @@
-// script.js — stabilisierte Version (Slideshow + Leaflet Map)
+// script.js — stabile Version (Smooth Scroll, Slideshow, Leaflet-Map)
 
 document.addEventListener('DOMContentLoaded', () => {
   /* ===== Smooth Scroll ===== */
@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const mapEl = document.getElementById('nrw-map');
   if (!mapEl || typeof L === 'undefined') return;
 
-  // Karte erzeugen (ohne View; wir fitBounds(en) später)
   const map = L.map(mapEl, {
     zoomControl: true,
     dragging: true,
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     attribution: '&copy; OpenStreetMap-Mitwirkende'
   }).addTo(map);
 
-  // Standorte
   const spots = [
     { name: 'Essen (Hauptstandort)', lat: 51.4556, lng: 7.0116, primary: true },
     { name: 'Duisburg',              lat: 51.4344, lng: 6.7623 },
@@ -64,24 +62,19 @@ document.addEventListener('DOMContentLoaded', () => {
     bounds.push([s.lat, s.lng]);
   });
 
-  // Auf alle Marker zoomen (mit Limit, damit Mobile nicht zu nah ist)
+  // Auf alle Marker zoomen (Limit verhindert zu nahes Mobile-Zoom)
   map.fitBounds(bounds, { padding: [50, 50], maxZoom: 9 });
 
-  // WICHTIG: Map-Container-Größe nachträglich an Leaflet melden
-  const refresh = () => map.invalidateSize();
-
-  // einmal sofort + nach kleinem Delay (gegen Layout-Shifts)
+  // Leaflet über echte Containergröße informieren (gegen graue/versetzte Tiles)
+  const refresh = () => map.invalidateSize(true);
   refresh();
   setTimeout(refresh, 150);
   setTimeout(refresh, 500);
-
-  // nach vollständigem Laden (Bilder/Fonts)
   window.addEventListener('load', refresh);
 
-  // wenn Containergröße sich ändert (z.B. Tabs/Accordion/Responsive)
+  // Reflow-Überwachung (Tabs, Accordion, Resize, Orientation)
   try {
     new ResizeObserver(refresh).observe(mapEl);
-  } catch (e) {
-    // älterer Browser – nicht schlimm
-  }
+  } catch (_) {}
+  window.addEventListener('orientationchange', () => setTimeout(refresh, 150));
 });
