@@ -4,21 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO -->
+  <!-- SEO Titel & Beschreibung -->
   <title>SpaceClean – Reinigungsfirma in Essen & NRW</title>
-  <meta name="description" content="SpaceClean – Ihre Reinigungsfirma in NRW. Professionelle Gebäudereinigung, Büroreinigung, Fensterreinigung & Hausmeisterservice in Essen, Duisburg, Düsseldorf, Bochum, Gelsenkirchen, Oberhausen, Mülheim & Wuppertal.">
-  <meta name="keywords" content="Reinigungsfirma Essen, Gebäudereinigung NRW, Büroreinigung Düsseldorf, Fensterreinigung Bochum, Treppenhausreinigung, Hausmeisterservice, Reinigung Duisburg, Reinigung Wuppertal, Reinigung Oberhausen, Reinigung Mülheim, SpaceClean">
+  <meta name="description" content="SpaceClean – Ihre Reinigungsfirma in NRW. Professionelle Gebäudereinigung, Büroreinigung, Fensterreinigung & Hausmeisterservice in Essen, Duisburg, Düsseldorf, Bochum, Gelsenkirchen, Oberhausen, Mülheim & Wuppertal." />
+  <meta name="keywords" content="Reinigungsfirma Essen, Gebäudereinigung NRW, Büroreinigung Düsseldorf, Fensterreinigung Bochum, Treppenhausreinigung, Hausmeisterservice, Reinigung Duisburg, Reinigung Wuppertal, Reinigung Oberhausen, Reinigung Mülheim, SpaceClean" />
 
-  <!-- Leaflet CSS zuerst, dann dein Stylesheet -->
+  <!-- Leaflet CSS (muss vor styles.css kommen) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4w0a0JbINhHRnHZRc6Ptq7iMyi25hSoBTo89RMw3cY="
-    crossorigin="">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4w0a0JbINhHRnHZRc6Ptq7iMyi25hSoBTo89RMw3cY="
+        crossorigin="">
+  <link rel="stylesheet" href="styles.css">
 
-  <!-- JSON-LD -->
+  <!-- Strukturierte Daten (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,8 +36,8 @@
     "url": "https://www.spaceclean.info",
     "priceRange": "€€",
     "areaServed": [
-      "Essen","Duisburg","Düsseldorf","Bochum",
-      "Gelsenkirchen","Oberhausen","Mülheim an der Ruhr","Wuppertal"
+      "Essen", "Duisburg", "Düsseldorf", "Bochum",
+      "Gelsenkirchen", "Oberhausen", "Mülheim an der Ruhr", "Wuppertal"
     ],
     "description": "Professionelle Gebäudereinigung für Wohnungen, Häuser, Büros und Praxen in ganz NRW. SpaceClean – Sauberkeit, die man sieht.",
     "sameAs": []
@@ -46,14 +45,14 @@
   </script>
 </head>
 <body>
-  <!-- Hintergrund -->
+  <!-- Fester Hintergrund: SpaceClean-Logo -->
   <div class="page-bg" aria-hidden="true"></div>
 
-  <!-- Header (deiner) -->
+  <!-- Header -->
   <header class="header">
     <div class="container nav">
       <div class="brand">
-        <img src="assets/SpaceClean.jpg" alt="SpaceClean Logo" style="height:66px">
+        <img src="assets/SpaceClean.jpg" alt="SpaceClean Logo" style="height:66px;" />
         <span class="name">SpaceClean</span>
       </div>
 
@@ -73,7 +72,7 @@
   </header>
 
   <main>
-    <!-- Hero + Slideshow (unverändert) -->
+    <!-- Hero + Slideshow -->
     <section class="hero container" id="home">
       <div>
         <h1>Sauberkeit, die man sieht.<br>Service, den man spürt.</h1>
@@ -100,8 +99,102 @@
       </div>
     </section>
 
-    <!-- Vorteile / Leistungen / Bewertungen (dein Inhalt) -->
-    <!-- … dein bestehender Code bleibt … -->
+    <!-- Vorteile -->
+    <section class="section" id="vorteile">
+      <div class="container">
+        <h2>Warum SpaceClean?</h2>
+        <p class="lead">Mit klaren Prozessen, geprüfter Qualität und fairen Preisen liefern wir konstante Ergebnisse.</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">🧼</div>
+            <h3>Gründlich &amp; zuverlässig</h3>
+            <p>Checklisten, Vier-Augen-Prinzip und feste Ansprechpartner.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🌱</div>
+            <h3>Nachhaltig</h3>
+            <p>Schonende, zertifizierte Reinigungsmittel und ressourcenschonende Prozesse.</p>
+          </div>
+          <div class="card">
+            <div class="icon">⏱️</div>
+            <h3>Flexible Zeiten</h3>
+            <p>Wir arbeiten, wenn es für Sie passt – auch frühmorgens oder abends.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungen -->
+    <section class="section" id="leistungen">
+      <div class="container">
+        <h2>Was wird gereinigt</h2>
+
+        <div class="accordion-list">
+          <details>
+            <summary><span>Wohnung/Ferienwohnungen</span></summary>
+            <div class="acc-panel">
+              <p>Grundreinigung von Wohnungen in NRW – Küche, Bad, Böden, Fensterrahmen. Termine nach Wunsch.</p>
+            </div>
+          </details>
+
+        <details>
+            <summary><span>Haus</span></summary>
+            <div class="acc-panel">
+              <p>Komplette Hausreinigung inkl. Treppenhaus, Oberflächen, Sanitär. Schonende Mittel, zuverlässige Teams.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>Büro, Praxis, Fitnessräume, Hallen etc.</span></summary>
+            <div class="acc-panel">
+              <p>Büro- Praxisreinigung mit Diskretion: Arbeitsplätze, Boden, Teeküche, Sanitär, Glas. Auf Wunsch außerhalb der Öffnungszeiten.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>Fenster</span></summary>
+            <div class="acc-panel">
+              <p>Streifenfreie Glas- und Rahmenreinigung – innen &amp; außen, auch Schaufenster.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="center">
+          <a class="btn" href="#kontakt">Angebot anfragen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bewertungen -->
+    <section id="bewertungen" class="section">
+      <div class="container">
+        <h2>Kundenbewertungen</h2>
+        <p class="lead">Echte Rückmeldungen aus dem Ruhrgebiet.</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <p>„Schnell, gründlich und zuverlässig. Unser Büro in der Innenstadt ist jeden Morgen tipptopp!“</p>
+            <div class="small">★★★★★ – M. Schneider, <strong>Essen</strong></div>
+          </div>
+
+          <div class="card">
+            <p>„Fenster wie neu! Sehr freundliches Team und faire Preise. Absolut empfehlenswert.“</p>
+            <div class="small">★★★★★ – M. Kaya, <strong>Duisburg</strong></div>
+          </div>
+
+          <div class="card">
+            <p>„Treppenhausreinigung perfekt umgesetzt. Pünktlich, sauber, unkompliziert.“</p>
+            <div class="small">★★★★★ – B. Ömsen, <strong>Bochum</strong></div>
+          </div>
+
+          <div class="card">
+            <p>„Schnelle Angebotserstellung, super Kommunikation und top Ergebnis in unserer Ferienwohnung.“</p>
+            <div class="small">★★★★★ – A. Schenker, <strong>Essen</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Karte -->
     <section class="section" id="karte">
@@ -110,22 +203,64 @@
         <p class="lead">Hauptstandort Essen – unterwegs im ganzen Ruhrgebiet &amp; NRW.</p>
 
         <div class="card map-card">
-          <!-- WICHTIG: keine weiteren Wrapper/Abstände im Map-Container -->
-          <div id="nrw-map" aria-label="Karte von NRW mit Standorten"></div>
+          <!-- Fallback-Style sorgt dafür, dass die Karte immer eine Höhe hat -->
+          <div id="nrw-map" aria-label="Karte von NRW mit Standorten" style="width:100%; height:420px;"></div>
 
+          <!-- Legende -->
           <div class="map-legend">
             <span class="dot dot-main"></span> Hauptstandort
-            <span class="legend-spacer"></span>
-            <span class="dot dot-secondary"></span> Einsatzorte in NRW
+            <span class="spacer"></span>
+            <span class="dot dot-sub"></span> Einsatzorte in NRW
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Kontakt (dein Inhalt) -->
-    <!-- … -->
+    <!-- Kontakt -->
+    <section class="section" id="kontakt">
+      <div class="container contact">
+        <div>
+          <h2>Angebot anfragen</h2>
+          <p class="lead">Erzählen Sie uns kurz, was gereinigt werden soll – wir melden uns schnell mit einem Angebot.</p>
+
+          <form id="contact-form" action="https://formspree.io/f/myznlqbb" method="POST">
+            <label>Ihr Name</label>
+            <input type="text" name="name" required><br><br>
+
+            <label>E-Mail</label>
+            <input type="email" name="email" required><br><br>
+
+            <label>Telefon</label>
+            <input type="tel" name="phone"><br><br>
+
+            <label>Nachricht</label>
+            <textarea name="message" placeholder="Objektart, Fläche, Wunschtermine ..." required></textarea><br><br>
+
+            <input type="hidden" name="_subject" value="Neue Anfrage über SpaceClean-Website">
+            <input type="hidden" name="_language" value="de">
+            <input type="hidden" name="_gotcha" style="display:none">
+
+            <button class="btn btn-primary" type="submit">Absenden</button>
+          </form>
+
+          <p class="small">
+            Danke! Wir melden uns in Kürze bei Ihnen.<br>
+            Hinweis: Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten zur Bearbeitung Ihrer Anfrage zu.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Kontakt</h3>
+          <p><strong>SpaceClean</strong><br>Mülheimer Straße 50<br>45145 Essen</p>
+          <p>Telefon: <a href="tel:+491733570004">+49 173 3570004</a><br>
+             E-Mail: <a href="mailto:info@spaceclean.info">info@spaceclean.info</a></p>
+          <p class="small">Öffnungszeiten: Rund um die Uhr!</p>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <p>© 2025 SpaceClean – Alle Rechte vorbehalten</p>
     <p>
@@ -135,18 +270,20 @@
     </p>
   </footer>
 
-  <!-- Mobile CTA -->
+  <!-- Mobile CTA-Leiste -->
   <div class="mobile-cta">
     <a href="#kontakt">Angebot anfragen</a>
     <a href="tel:+491733570004">Anrufen</a>
   </div>
 
-  <!-- Leaflet JS (vor deinem Script, beide mit defer) -->
+  <!-- Leaflet JS (muss vor deinem script.js stehen) -->
   <script
     src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
     defer></script>
+
+  <!-- Dein Script -->
   <script src="script.js" defer></script>
 </body>
 </html>
