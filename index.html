@@ -9,9 +9,18 @@
   <meta name="description" content="SpaceClean – Ihre Reinigungsfirma in NRW. Professionelle Gebäudereinigung, Büroreinigung, Fensterreinigung & Hausmeisterservice in Essen, Duisburg, Düsseldorf, Bochum, Gelsenkirchen, Oberhausen, Mülheim & Wuppertal." />
   <meta name="keywords" content="Reinigungsfirma Essen, Gebäudereinigung NRW, Büroreinigung Düsseldorf, Fensterreinigung Bochum, Treppenhausreinigung, Hausmeisterservice, Reinigung Duisburg, Reinigung Wuppertal, Reinigung Oberhausen, Reinigung Mülheim, SpaceClean" />
 
-  <!-- Leaflet CSS (muss vor styles.css kommen) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Leaflet CSS (für die NRW-Karte) -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+
+<!-- Deine Styles -->
+<link rel="stylesheet" href="styles.css">
 
   <!-- Strukturierte Daten (JSON-LD) -->
   <script type="application/ld+json">
@@ -192,42 +201,13 @@
       </div>
     </section>
 
-<!-- Karte (OpenStreetMap + eigene Pins) -->
 <section class="section" id="karte">
   <div class="container">
     <h2>Einsatzgebiet in NRW</h2>
-    <p class="lead">Hauptstandort Essen – unterwegs im ganzen Ruhrgebiet &amp; NRW.</p>
+    <p class="lead">Hauptstandort Düsseldorf – unterwegs im ganzen Ruhrgebiet &amp; NRW.</p>
 
     <div class="card map-card">
-      <!-- Container mit Karte -->
-      <div class="map-wrapper">
-        <iframe
-          class="osm-frame"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=6.4,51.1,7.5,51.6&layer=mapnik"
-          frameborder="0"
-          scrolling="no"
-          aria-label="Karte von NRW mit Standorten">
-        </iframe>
-
-        <!-- Eigene Pins oben drauf -->
-        <div class="map-pins">
-          <div class="pin main" style="left:52%; top:53%;" title="Essen (Hauptstandort)"></div>
-          <div class="pin" style="left:45%; top:55%;" title="Mülheim"></div>
-          <div class="pin" style="left:43%; top:51%;" title="Oberhausen"></div>
-          <div class="pin" style="left:56%; top:50%;" title="Gelsenkirchen"></div>
-          <div class="pin" style="left:58%; top:58%;" title="Bochum"></div>
-          <div class="pin" style="left:40%; top:58%;" title="Duisburg"></div>
-          <div class="pin" style="left:36%; top:64%;" title="Düsseldorf"></div>
-          <div class="pin" style="left:70%; top:66%;" title="Wuppertal"></div>
-        </div>
-      </div>
-
-      <!-- Legende -->
-      <div class="map-legend">
-        <span class="dot dot-main"></span> Hauptstandort
-        <span class="spacer"></span>
-        <span class="dot dot-sub"></span> Einsatzorte in NRW
-      </div>
+      <div id="nrw-map" aria-label="Karte von NRW mit Standorten"></div>
     </div>
   </div>
 </section>
@@ -298,7 +278,15 @@
     crossorigin=""
     defer></script>
 
-  <!-- Dein Script -->
-  <script src="script.js" defer></script>
+ <!-- Leaflet JS (für die NRW-Karte) -->
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+  defer
+></script>
+
+<!-- Dein Script -->
+<script src="script.js" defer></script>
 </body>
 </html>
