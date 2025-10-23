@@ -259,3 +259,10 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
 .leaflet-tile {
   max-width: none !important;
 }
+/* ===== Statische Karte ===== */
+.map-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
