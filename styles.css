@@ -1,6 +1,5 @@
 /* ===========================
-   SpaceClean – styles.css
-   (Vollständige, bereinigte Version)
+   SpaceClean – styles.css (bereinigt)
    =========================== */
 
 /* --- Grundlayout --- */
@@ -22,16 +21,16 @@ img { max-width: 100%; height: auto; display: block; }
 .lead { color:#475569; margin: 6px 0 18px; }
 .small { font-size: 14px; color:#475569; }
 
-/* --- Fester Seitenhintergrund mit Logo (funktioniert auf Handy) --- */
+/* --- Fester Seitenhintergrund mit Logo --- */
 .page-bg{
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background: center center / clamp(320px, 60vw, 900px) no-repeat url("assets/bg-logo.png");
-  filter: blur(0.7px);  /* 0–1px je nach Geschmack */
-  opacity: .18;         /* 0.10–0.20 dezent */
+  filter: blur(0.7px);
+  opacity: .18;
 }
 .page-bg::after{
   content:""; position:absolute; inset:0;
-  background: rgba(255,255,255,.4); /* helles „Nebel“-Overlay für Lesbarkeit */
+  background: rgba(255,255,255,.4);
 }
 
 /* --- Header / Navigation --- */
@@ -39,7 +38,7 @@ img { max-width: 100%; height: auto; display: block; }
   position: sticky; top: 0; z-index: 40;
   background: rgba(255,255,255,0.9);
   backdrop-filter: saturate(1.1) blur(6px);
-  border-bottom: 1px solid #e2e8f0; /* slate-200 */
+  border-bottom: 1px solid #e2e8f0;
 }
 .nav {
   display: grid;
@@ -94,7 +93,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .slide.active{ opacity:1; }
 
-/* --- Vorteile / Karten / Grids --- */
+/* --- Vorteile / Grids --- */
 .grid-3 {
   display:grid; gap:16px; grid-template-columns: repeat(3, 1fr);
 }
@@ -109,7 +108,6 @@ img { max-width: 100%; height: auto; display: block; }
   overflow:hidden;
 }
 .accordion-list summary{
-  position: relative; z-index: 1;
   list-style:none;
   display:flex; align-items:center; justify-content:space-between;
   gap:12px; padding:18px 16px;
@@ -154,81 +152,30 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
 .footer a { color:#555; text-decoration:none; }
 .footer a:hover { text-decoration:underline; }
 
-/* --- Mobile CTA unten --- */
-.mobile-cta{
-  position:fixed; left:0; right:0; bottom:10px;
-  display:flex; gap:10px; padding:10px 14px; z-index:60;
-}
-.mobile-cta a{
-  flex:1; text-align:center; font-weight:700; border-radius:10px; padding:12px 14px;
- background: linear-gradient(135deg, #16a34a, #4ade80); color:#fff; box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-/* --- Responsive --- */
-
-/* Tablet */
-@media (max-width: 1024px){
-  .hero.container{ grid-template-columns:1fr; gap:20px; }
-  .brand img{ height:70px; }
-  .center-contact{ gap:10px; font-size:13px; }
-  .hero-slideshow{ height:320px; }
-}
-
-/* Smartphones */
-@media (max-width: 768px){
-  body{ padding:0 10px; }
-  .nav{ grid-template-columns: 1fr; height:auto; gap:10px; padding:8px 0; }
-  .brand{ justify-content:center; }
-  .actions{ display:none; }            /* Header-Buttons oben ausblenden (unten gibt's Mobile-CTA) */
-  .center-contact{ display:none; }     /* optional ausblenden, um Header schlank zu halten */
-
-  .hero{ grid-template-columns:1fr; padding: 20px 0; }
-  .hero h1{ font-size:28px; }
-  .hero p{ font-size:16px; }
-
-  .hero-slideshow{ height:250px; border-radius:12px; }
-
-  .grid-3{ grid-template-columns:1fr; gap:14px; }
-
-  .contact{ grid-template-columns:1fr; }
-  .btn.btn-primary{ width:100%; }
-
-  
-}
-
-/* Sehr kleine Geräte */
-@media (max-width: 480px){
-  .brand img{ height:52px; }
-  .hero h1{ font-size:24px; }
-  .badge{ font-size:11px; padding:5px 8px; }
-}
-/* ===== Mobile CTA unten – nur auf Smartphones ===== */
-/* Standard: auf Desktop/Laptop ausgeblendet */
+/* --- Mobile CTA unten (nur Smartphone) --- */
+/* Standard: Desktop/Laptop ausgeblendet */
 .mobile-cta{ display:none; }
 
-/* Nur <= 768px anzeigen */
 @media (max-width: 768px){
-  /* Platz für die Leiste schaffen, damit nichts verdeckt wird */
-  body{ padding-bottom: 84px; } /* Höhe der Leiste + Luft */
-
+  body{ padding-bottom: 84px; } /* Platz für die Leiste */
   .mobile-cta{
     position: fixed; left: 0; right: 0;
-    bottom: max(10px, env(safe-area-inset-bottom));  /* iPhone Notch-Schutz */
+    bottom: max(10px, env(safe-area-inset-bottom));
     display: flex; gap: 10px; justify-content: center;
-    padding: 10px 14px;
-    z-index: 60;
+    padding: 10px 14px; z-index: 60;
     pointer-events: none; /* Container klicksperren, nur Buttons klickbar */
   }
   .mobile-cta a{
-    pointer-events: auto;           /* Buttons klickbar */
-    flex: 1; max-width: 520px;      /* nicht endlos breit */
+    pointer-events: auto;
+    flex: 1; max-width: 520px;
     text-align: center; font-weight: 700;
     border-radius: 12px; padding: 12px 14px;
-   background: linear-gradient(135deg, #16a34a, #4ade80);
+    background: linear-gradient(135deg, #16a34a, #4ade80);
     color: #fff; text-decoration: none;
     box-shadow: 0 8px 20px rgba(0,0,0,.15);
   }
 }
+
 /* Floating-Button nur auf Desktop */
 .fab-desktop{
   position: fixed; right: 22px; bottom: 22px; z-index: 50;
@@ -239,6 +186,7 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
   box-shadow: 0 10px 24px rgba(0,0,0,.18);
 }
 @media (max-width:768px){ .fab-desktop{ display:none; } }
+
 /* --- Header-Buttons optimieren --- */
 .header .actions .btn {
   padding: 8px 14px;
@@ -247,36 +195,34 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
   border-radius: 8px;
   line-height: 1.2;
 }
-
 .header .actions .btn-primary {
- background: linear-gradient(135deg, #16a34a, #4ade80);
+  background: linear-gradient(135deg, #16a34a, #4ade80);
   color: #fff;
   border: none;
 }
-
 .header .actions .btn-primary:hover {
   opacity: 0.9;
   transform: translateY(-1px);
 }
+
 /* --- Abstand unter Akkordeon-Button --- */
 #leistungen .center {
   margin-top: 24px;
-  margin-bottom: 48px; /* mehr Luft nach unten */
-}
-/* ===== NRW-Karte ===== */
-.map-card {
-  padding: 0;                  /* keine Innenabstände – Map füllt die Card */
-  overflow: hidden;            /* saubere runde Ecken */
-  border-radius: 16px;
+  margin-bottom: 48px;
 }
 
+/* ===== Leaflet-Karte (final) ===== */
+.map-card {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
 #nrw-map {
   display: block;
   width: 100%;
   height: 420px;               /* feste Höhe für Leaflet */
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0;
 }
-
 /* Legende unter der Karte */
 .map-legend {
   display: flex;
@@ -287,7 +233,6 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
   font-size: 14px;
 }
 .map-legend .spacer { width: 18px; }
-
 .dot {
   display: inline-block;
   width: 12px; height: 12px;
@@ -303,63 +248,14 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
   background: #4ade80;
   border: 2px solid #16a34a;
 }
-
 /* Mobile: etwas flacher */
 @media (max-width: 768px) {
   #nrw-map { height: 320px; }
 }
-/* Leaflet: Kacheln & Marker dürfen NICHT durch globales img {max-width:100%} skaliert werden */
+/* Leaflet-Fix: Kacheln & Marker dürfen NICHT durch globales img {max-width:100%} skaliert werden */
 .leaflet-container img,
 .leaflet-pane img,
 .leaflet-marker-icon,
 .leaflet-tile {
   max-width: none !important;
-}
-/* ===== Statische NRW-Karte (PNG + Pins) ===== */
-.map-card { padding: 0; overflow: hidden; border-radius: 16px; }
-
-.nrw-static-map {
-  position: relative;
-  width: 100%;
-  /* das <img> bestimmt die Höhe -> immer korrekt, keine grauen Flächen */
-  background: #eef3f7; /* zarter Hintergrund während Bild lädt */
-}
-
-.nrw-static-map > img {
-  display: block;
-  width: 100%;
-  height: auto;      /* Bild hält sein Seitenverhältnis */
-}
-
-/* Pins */
-.pin {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  width: 12px; height: 12px; border-radius: 50%;
-  background: #4ade80;               /* grün hell */
-  border: 2px solid #16a34a;         /* grün dunkel */
-  box-shadow: 0 0 0 2px #ffffff80;   /* weißer Halo für bessere Lesbarkeit */
-  cursor: default;
-}
-
-.pin.main {
-  width: 14px; height: 14px;
-  background: #22c55e;
-  border-color: #166534;
-}
-
-/* Legende */
-.map-legend {
-  display: flex; align-items: center; gap: 10px;
-  padding: 12px 14px; border-top: 1px solid rgba(0,0,0,.06);
-  font-size: 14px;
-}
-.map-legend .spacer { width: 18px; }
-.dot { display:inline-block; width:12px; height:12px; border-radius:999px; }
-.dot-main { width:14px; height:14px; background:#22c55e; border:2px solid #166534; }
-.dot-sub  { background:#4ade80;   border:2px solid #16a34a; }
-
-/* Optional: Mobile etwas kompakter */
-@media (max-width: 768px){
-  .map-legend { font-size: 13px; }
 }
