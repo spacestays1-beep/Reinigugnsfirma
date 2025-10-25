@@ -299,3 +299,67 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
     height: auto;
   }
 }
+/* ===== MOBILE HERO FIX (<=768px) ===== */
+@media (max-width: 768px) {
+
+  /* sorgt dafür, dass der Text im Viewport bleibt */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* HERO-Bereich */
+  .hero.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 12px;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 26px;          /* kleiner, damit es passt */
+    line-height: 1.25;
+    font-weight: 800;
+    word-break: break-word;   /* verhindert Überschneiden */
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #334155;
+    max-width: 90%;
+    margin: 0 auto 16px;
+  }
+
+  /* Buttons (Leistungen / Angebot) */
+  .hero .btn {
+    font-size: 15px;
+    padding: 10px 14px;
+    margin: 4px;
+  }
+
+  /* Badge-Leiste (Zufriedenheit etc.) */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .badge {
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 999px;
+  }
+
+  /* Slideshow (wenn vorhanden) */
+  .hero-slideshow {
+    height: 240px;
+    border-radius: 12px;
+  }
+}
