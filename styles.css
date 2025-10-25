@@ -417,3 +417,42 @@ label{ display:block; font-weight:600; margin:6px 0 6px; }
   .actions{ order:3; width:100%; justify-content:center; gap:8px; margin-top:6px; }
   .actions .btn{ padding:10px 14px; font-size:15px; }
 }
+/* === FIX: Slideshow sichtbar auf Handy === */
+
+/* 1. Hero auf Handy als Spalte (Text über Slideshow) */
+@media (max-width: 768px){
+  .hero.container{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  /* 2. Karte und Slideshow nie 0px hoch */
+  .hero .card,
+  .hero-slideshow{
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 240px;       /* Sichtbare Höhe auf Mobil */
+    overflow: hidden;
+  }
+
+  /* 3. Bilder füllen den Bereich sauber */
+  .hero-slideshow img.slide{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* 4. Damit kein Abstand unterhalb entsteht */
+  .hero .card{
+    padding: 0;
+    margin: 0 auto;
+    border: none;
+    box-shadow: none;
+  }
+}
