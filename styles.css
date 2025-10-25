@@ -333,3 +333,27 @@ label { display:block; font-weight:600; margin:6px 0 6px; }
     border-radius: 12px;
   }
 }
+/* ===== MOBILE HEADER FIX (<=768px) ===== */
+@media (max-width: 768px) {
+  /* Header kompakter und einspaltig */
+  .nav{
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  /* Logo mittig, etwas kleiner */
+  .brand{ justify-content: center; }
+  .brand img{ height: 52px; }
+
+  /* Kontaktzeile auf Handy ausblenden (die Infos stehen ja unten in Kontakt & in der Mobile-CTA) */
+  .center-contact{ display: none; }
+
+  /* Optional: Header-Buttons etwas kompakter */
+  .header .actions .btn{
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
