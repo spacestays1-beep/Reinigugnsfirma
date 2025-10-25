@@ -14,17 +14,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
- // Slideshow (fade)
-const slides = Array.from(document.querySelectorAll('.hero-slideshow .slide'));
-if (slides.length) {
+// === Slideshow (robust) ===
+(() => {
+  const root = document.querySelector('.hero-slideshow');
+  if (!root) return;
+
+  const slides = Array.from(root.querySelectorAll('.slide'));
+  if (!slides.length) return;
+
+  // Erste Folie sicher aktivieren
   let i = slides.findIndex(s => s.classList.contains('active'));
   if (i < 0) { i = 0; slides[0].classList.add('active'); }
-  setInterval(() => {
-    slides[i].classList.remove('active');
-    i = (i + 1) % slides.length;
-    slides[i].classList.add('active');
-  }, 2500);
-}
+
+  const run = () => {
+    setInterval(() => {
+      slides[i].classList.remove('active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('active');
+    }, 2500);
+  };
+
+  // Erst starten, wenn das erste Bild bereit ist (verhindert schwarzen Frame)
+  const first = slides[i];
+  if (first.complete) {
+    run();
+  } else {
+    first.addEventListener('load', run, { once: true });
+    first.addEventListener('error', run, { once: true }); // notfalls trotzdem rotieren
+  }
+
+  // Safety: bei Resize neu layouten (nur falls nötig)
+  const fixSize = () => {
+    // forciert ein Reflow für manche Mobile-Browser
+    root.style.transform = 'translateZ(0)';
+  };
+  window.addEventListener('resize', fixSize);
+})();
 
  
   // 1) MAP INITIALISIEREN
