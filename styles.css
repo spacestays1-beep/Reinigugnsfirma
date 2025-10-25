@@ -364,3 +364,56 @@ label{ display:block; font-weight:600; margin:6px 0 6px; }
     font-size: 15px;
   }
 }
+/* === HERO-FIX 1: Grid-Spalte darf nicht zusammenschrumpfen === */
+.hero.container > * { min-width: 0; }          /* verhindert die schmale Leiste */
+.hero .card       { min-width: 0; }
+
+/* === HERO-FIX 2: Slideshow soll die rechte Spalte voll ausfüllen === */
+.hero .card{
+  padding: 0;                 /* kein Innenabstand – Bild füllt die Karte */
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* rechte Spalte auf Desktop wirklich als Grid darstellen */
+@media (min-width: 769px){
+  .hero.container{
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;  /* Text / Slideshow */
+    gap: 28px;
+    align-items: stretch;                  /* Slideshow streckt sich */
+  }
+}
+
+/* === HERO-FIX 3: Slideshow-Höhen & Füllen === */
+.hero-slideshow{
+  position: relative;
+  width: 100%;
+  height: 360px;             /* Standard-Desktop */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+.slideshow-container{ position:relative; width:100%; height:100%; }
+.slide{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.slide.active{ opacity: 1; }
+
+@media (min-width: 1200px){ .hero-slideshow{ height: 430px; } }
+@media (max-width: 768px) { .hero-slideshow{ height: 240px; } }
+
+/* optional: Header-Buttons auch auf Handy sauber in eine Zeile */
+.nav{ align-items:center; }
+.actions{ display:flex; gap:10px; align-items:center; flex-wrap:nowrap; }
+.actions .btn{ white-space:nowrap; }
+@media (max-width: 767.98px){
+  .nav{ flex-wrap: wrap; }
+  .actions{ order:3; width:100%; justify-content:center; gap:8px; margin-top:6px; }
+  .actions .btn{ padding:10px 14px; font-size:15px; }
+}
