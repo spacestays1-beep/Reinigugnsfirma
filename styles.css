@@ -334,3 +334,33 @@ label{ display:block; font-weight:600; margin:6px 0 6px; }
   box-shadow: 0 10px 24px rgba(0,0,0,.18);
 }
 @media (max-width: 767.98px){ .fab-desktop{ display:none; } }
+/* === FIX: Header-Buttons sauber ausrichten === */
+.nav { align-items: center; }
+
+.actions{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.actions .btn{
+  white-space: nowrap;       /* nie umbrechen */
+  line-height: 1.2;
+}
+
+/* Handy: Buttons mittig, eine Zeile */
+@media (max-width: 767.98px){
+  .nav{ flex-wrap: wrap; }   /* Logo/Name + Buttons dürfen umbrechen */
+  .actions{
+    order: 3;                /* Buttons unter den Brand-Namen */
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 6px;
+  }
+  .actions .btn{
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+}
