@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-// === Slideshow (robust) ===
+// === Slideshow (robust, mobile-freundlich) ===
 (() => {
   const root = document.querySelector('.hero-slideshow');
   if (!root) return;
@@ -22,17 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const slides = Array.from(root.querySelectorAll('.slide'));
   if (!slides.length) return;
 
-  // Erste Folie sicher aktivieren
+  // Startindex bestimmen
   let i = slides.findIndex(s => s.classList.contains('active'));
-  if (i < 0) { i = 0; slides[0].classList.add('active'); }
+  if (i < 0) i = 0;
 
-  const run = () => {
-    setInterval(() => {
-      slides[i].classList.remove('active');
-      i = (i + 1) % slides.length;
-      slides[i].classList.add('active');
-    }, 2500);
+  // NEU: Erste Folie SOFORT sichtbar machen (kein Warten auf .complete)
+  slides.forEach(s => s.classList.remove('active'));
+  slides[i].classList.add('active');
+
+  // Rotation direkt starten (vermeidet Blackscreen auf Mobile)
+  const rotate = () => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
   };
+  setInterval(rotate, 2500);
+
+  // Optional: kleiner Reflow-Fix bei Resize (einige Mobile-Browser)
+  const fixSize = () => { root.style.transform = 'translateZ(0)'; };
+  window.addEventListener('resize', fixSize);
+})();
 
   // Erst starten, wenn das erste Bild bereit ist (verhindert schwarzen Frame)
   const first = slides[i];
